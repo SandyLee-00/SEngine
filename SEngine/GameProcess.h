@@ -3,6 +3,10 @@
 #include <Windows.h>
 #include <memory>
 
+/// <summary>
+/// 게임 시작	부터 종료까지의 흐름을 담당하는 클래스
+/// 231231 이서영
+/// </summary>
 class GameProcess
 {
 public:

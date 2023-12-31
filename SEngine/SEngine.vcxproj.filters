@@ -16,6 +16,15 @@
     <Filter Include="EntryPoint">
       <UniqueIdentifier>{7b39067c-de4f-4dfa-84a8-a9471cc9bf4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3_Engine">
+      <UniqueIdentifier>{64b60b4c-44a5-4237-87ad-90adcba68761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Renderer">
+      <UniqueIdentifier>{e6d575e9-009d-47f5-9e0f-6960c4dd5ed5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Math">
+      <UniqueIdentifier>{01305e28-cc00-47bd-8c7c-2dbcdcdde965}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -32,6 +41,15 @@
     </ClInclude>
     <ClInclude Include="EntryPoint.h">
       <Filter>EntryPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>3_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>3_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectType.h">
+      <Filter>3_Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +71,12 @@
     </ClCompile>
     <ClCompile Include="GameProcess.cpp">
       <Filter>EntryPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>3_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>3_Engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
