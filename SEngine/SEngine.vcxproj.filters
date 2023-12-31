@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="EntryPoint">
       <UniqueIdentifier>{7b39067c-de4f-4dfa-84a8-a9471cc9bf4a}</UniqueIdentifier>
     </Filter>
@@ -25,17 +13,11 @@
     <Filter Include="1_Math">
       <UniqueIdentifier>{01305e28-cc00-47bd-8c7c-2dbcdcdde965}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3_1_Managers">
+      <UniqueIdentifier>{586f8743-748c-4ef2-96fe-8f4d6a618186}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameProcess.h">
       <Filter>EntryPoint</Filter>
     </ClInclude>
@@ -51,18 +33,28 @@
     <ClInclude Include="ObjectType.h">
       <Filter>3_Engine</Filter>
     </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>EntryPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>EntryPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>EntryPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine.h">
+      <Filter>3_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>3_1_Managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="SEngine.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="SEngine.ico">
-      <Filter>Resource Files</Filter>
+      <Filter>EntryPoint</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>EntryPoint</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -78,5 +70,16 @@
     <ClCompile Include="Scene.cpp">
       <Filter>3_Engine</Filter>
     </ClCompile>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>3_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>3_1_Managers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SEngine.rc">
+      <Filter>EntryPoint</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

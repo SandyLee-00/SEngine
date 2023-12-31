@@ -2,6 +2,8 @@
 /// 2023.12.20
 /// 김동일 유승운
 /// 게임 껍데기 시작!
+/// 
+/// EntryPoint에서 GameProcess 생성
 /// </summary>
 #include <memory>
 

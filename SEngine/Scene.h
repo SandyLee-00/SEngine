@@ -6,7 +6,7 @@
 #include "ObjectType.h"
 
 /// <summary>
-/// Scene에 GameObject를 넣어서 update, render를 한다
+/// Scene에 GameObject를 넣어서 ObjectType별로 update, render를 한다
 /// 231231 이서영
 /// </summary>
 class Scene
