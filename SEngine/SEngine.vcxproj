@@ -132,6 +132,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="ObjectType.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="EntryPoint.h" />
     <ClInclude Include="Scene.h" />
@@ -143,6 +144,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="TimeManager.cpp" />
   </ItemGroup>

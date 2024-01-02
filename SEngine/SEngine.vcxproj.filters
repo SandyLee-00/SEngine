@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="EntryPoint">
-      <UniqueIdentifier>{7b39067c-de4f-4dfa-84a8-a9471cc9bf4a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="3_Engine">
       <UniqueIdentifier>{64b60b4c-44a5-4237-87ad-90adcba68761}</UniqueIdentifier>
     </Filter>
@@ -13,16 +10,19 @@
     <Filter Include="1_Math">
       <UniqueIdentifier>{01305e28-cc00-47bd-8c7c-2dbcdcdde965}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3_1_Managers">
+    <Filter Include="3_1_EntryPoint">
+      <UniqueIdentifier>{7b39067c-de4f-4dfa-84a8-a9471cc9bf4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3_2_Managers">
       <UniqueIdentifier>{586f8743-748c-4ef2-96fe-8f4d6a618186}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameProcess.h">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClInclude>
     <ClInclude Include="EntryPoint.h">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>3_Engine</Filter>
@@ -34,35 +34,38 @@
       <Filter>3_Engine</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClInclude>
     <ClInclude Include="GameEngine.h">
       <Filter>3_Engine</Filter>
     </ClInclude>
     <ClInclude Include="TimeManager.h">
-      <Filter>3_1_Managers</Filter>
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>2_Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </Image>
     <Image Include="small.ico">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClCompile>
     <ClCompile Include="GameProcess.cpp">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>3_Engine</Filter>
@@ -74,12 +77,15 @@
       <Filter>3_Engine</Filter>
     </ClCompile>
     <ClCompile Include="TimeManager.cpp">
-      <Filter>3_1_Managers</Filter>
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>2_Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">
-      <Filter>EntryPoint</Filter>
+      <Filter>3_1_EntryPoint</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

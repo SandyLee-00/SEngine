@@ -2,6 +2,9 @@
 #include "GameProcess.h"
 #include "resource.h"
 
+#include "Renderer.h"
+#include "GameEngine.h"
+
 #define MAX_LOADSTRING 100
 WCHAR szTitle[MAX_LOADSTRING] = L"Demo";
 WCHAR szWindowClass[MAX_LOADSTRING] = L"Demo";
@@ -18,12 +21,21 @@ GameProcess::~GameProcess()
 
 bool GameProcess::Initialize()
 {
+	// window class 殿废
 	RegisterClass(m_hInstance);
 
 	if (!InitInstance())
 	{
 		return FALSE;
 	}
+
+	// Renderer 积己
+	m_renderer = new Renderer();
+	m_renderer->Initialize(m_hWnd);
+
+	// GameEngine 积己
+	m_gameEngine = new GameEngine();
+	m_gameEngine->Initialize(m_hWnd, m_renderer);
 
 	return true;
 }
@@ -46,8 +58,7 @@ int GameProcess::Loop()
 		}
 		else
 		{
-			Update();
-			Render();
+			m_gameEngine->Process();
 		}
 	}
 
@@ -56,17 +67,10 @@ int GameProcess::Loop()
 
 void GameProcess::Finalize()
 {
-
-}
-
-void GameProcess::Update()
-{
-
-}
-
-void GameProcess::Render()
-{
-
+	// GameEngine 秦力
+	delete m_gameEngine;
+	// Renderer 秦力
+	delete m_renderer;
 }
 
 void GameProcess::RegisterClass(HINSTANCE hInstance)
