@@ -1,5 +1,7 @@
 #pragma once
 #include <Windows.h>
+#include <unordered_map>
+#include <vector>
 
 /// <summary>
 /// 게임 엔진 Life Cycle을 관리하는 클래스
@@ -8,7 +10,7 @@
 class GameEngine
 {
 public:
-	GameEngine();
+	GameEngine() = default;
 	~GameEngine();
 
 	void Initialize(HWND hWnd, class Renderer* renderer);
@@ -38,6 +40,10 @@ private:
 
 	// AllManager: 모든 매니저를 갖고있는 매니저
 	class AllManagers* m_allManagers;
+
+private:
+	// Scene들 Unordered_map에 넣어서 KeyValue로 사용
+	std::vector<class Scene*> m_scenes;
 
 private:
 	HWND m_hWnd;

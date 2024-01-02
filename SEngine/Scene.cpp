@@ -2,11 +2,6 @@
 #include "GameObject.h"
 #include "ObjectType.h"
 
-Scene::Scene()
-{
-
-}
-
 Scene::~Scene()
 {
 

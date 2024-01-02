@@ -16,6 +16,9 @@
     <Filter Include="3_2_Managers">
       <UniqueIdentifier>{586f8743-748c-4ef2-96fe-8f4d6a618186}</UniqueIdentifier>
     </Filter>
+    <Filter Include="4_Script">
+      <UniqueIdentifier>{6d969d54-278a-4d6c-a047-78000c804772}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameProcess.h">
@@ -81,6 +84,9 @@
     <ClInclude Include="UIManager.h">
       <Filter>3_2_Managers</Filter>
     </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>4_Script</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -141,6 +147,9 @@
     </ClCompile>
     <ClCompile Include="UIManager.cpp">
       <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>4_Script</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -6,14 +6,14 @@
 /// 240102 ¿Ãº≠øµ
 /// </summary>
 
-class UIManager
+class UIManager : public IManager
 {
 public:
 	UIManager() {};
 	~UIManager() {};
 
-	void Initialize();
-	void Finalize();
+	void Initialize() override;
+	void Finalize() override;
 
 };
 

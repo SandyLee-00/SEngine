@@ -12,7 +12,7 @@
 class Scene
 {
 public:
-	Scene();
+	Scene() = default;
 	virtual ~Scene();
 
 public:
@@ -28,7 +28,7 @@ private:
 	std::string m_sceneName;
 
 	// 렌더러
-	// class Renderer* m_renderer;
+	class Renderer* m_renderer;
 
 	// ObjectType에 따른 GameObject들
 	std::vector<GameObject*> m_gameObjects[static_cast<int>(ObjectType::End)];

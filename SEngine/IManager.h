@@ -12,7 +12,7 @@ class IManager
 {
 public:
 	IManager(){};
-	virtual ~IManager() = 0;
+	virtual ~IManager() {};
 
 	virtual void Initialize() = 0;
 	virtual void Finalize() = 0;

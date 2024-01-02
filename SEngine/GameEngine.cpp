@@ -11,11 +11,7 @@
 #include "UIManager.h"
 #include "AllManagers.h"
 
-
-GameEngine::GameEngine()
-{
-
-}
+#include "Scene.h"
 
 GameEngine::~GameEngine()
 {
@@ -51,9 +47,10 @@ void GameEngine::Initialize(HWND hWnd, Renderer* renderer)
 	m_allManagers = new AllManagers();
 
 	// ==== <Manager Initialize>
-
 	m_allManagers->Initialize(m_pathManager, m_resourceManager, m_soundManager, m_timeManager, m_inputManager, m_sceneManager, m_cameraManager, m_collisionManager, m_UIManager);
 
+	// ==== <Scene Initialize>
+	std::unordered_map<std::string, Scene*> scenes;
 }
 
 void GameEngine::Process()
