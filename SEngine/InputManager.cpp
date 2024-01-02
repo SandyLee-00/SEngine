@@ -9,3 +9,8 @@ void InputManager::Finalize()
 {
 
 }
+
+void InputManager::ProcessUserInput()
+{
+
+}

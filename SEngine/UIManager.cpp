@@ -9,3 +9,8 @@ void UIManager::Finalize()
 {
 
 }
+
+void UIManager::ProcessUIEvent()
+{
+
+}

@@ -5,7 +5,7 @@
 #include "IManager.h"
 
 /// <summary>
-/// Update(_deltaTime)에서 쓸 deltaTime 값을 계산해주는 클래스
+/// CalculateDeltaTime(_deltaTime)에서 쓸 deltaTime 값을 계산해주는 클래스
 /// 231231 이서영
 /// </summary>
 class TimeManager : public IManager
@@ -18,7 +18,7 @@ public:
 	void Initialize() override;
 	void Finalize() override;
 
-	void Update();
+	void ProcessDeltaTime();
 
 public:
 	float GetDeltaTime() const { return m_deltaTime; }

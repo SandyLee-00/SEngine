@@ -9,3 +9,8 @@ void CameraManager::Finalize()
 {
 
 }
+
+void CameraManager::ProcessCamera()
+{
+
+}

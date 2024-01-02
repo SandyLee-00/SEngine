@@ -16,3 +16,18 @@ void SceneManager::Finalize()
 {
 
 }
+
+void SceneManager::FixedUpdate(float PHYSICS_DELTATIME)
+{
+
+}
+
+void SceneManager::Update(float deltaTime)
+{
+
+}
+
+void SceneManager::Render(class Renderer* renderer)
+{
+
+}

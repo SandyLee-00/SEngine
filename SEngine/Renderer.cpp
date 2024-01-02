@@ -19,3 +19,8 @@ void Renderer::Render()
 {
 
 }
+
+void Renderer::BeginRender()
+{
+
+}

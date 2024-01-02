@@ -22,7 +22,7 @@ void TimeManager::Finalize()
 
 }
 
-void TimeManager::Update()
+void TimeManager::ProcessDeltaTime()
 {
 	QueryPerformanceCounter(&m_curentCount);
 

@@ -14,5 +14,7 @@ public:
 
 	void Initalize();
 	void Finalize();
+
+	void ProcessCollision(float deltaTime);
 };
 

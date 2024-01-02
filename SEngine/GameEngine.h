@@ -44,6 +44,7 @@ private:
 private:
 	// Scene들 Unordered_map에 넣어서 KeyValue로 사용
 	std::vector<class Scene*> m_scenes;
+	float m_elapsedPhysicsTime;
 
 private:
 	HWND m_hWnd;

@@ -9,5 +9,8 @@ public:
 
 	void Initialize(HWND hWnd);
 	void Render();
+
+public:
+	void BeginRender();
 };
 
