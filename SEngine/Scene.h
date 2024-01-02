@@ -16,11 +16,18 @@ public:
 	virtual ~Scene();
 
 public:
+	// 상속한 실제 Scene에서 구현해야 하는 함수
+	virtual void Enter() = 0;
+	virtual void Exit() = 0;
+
+public:
+	// 해당 씬의 GameObject에 있는 함수를 타입별로 호출
 	void Start();
 	void Update();
 	void Render();
 
 public:
+	// Scene의 공통 기능
 	void AddGameObject(class GameObject* _gameObject);
 
 private:
@@ -31,7 +38,7 @@ private:
 	class Renderer* m_renderer;
 
 	// ObjectType에 따른 GameObject들
-	std::vector<GameObject*> m_gameObjects[static_cast<int>(ObjectType::End)];
+	std::vector<class GameObject*> m_gameObjects[static_cast<int>(ObjectType::End)];
 
 };
 

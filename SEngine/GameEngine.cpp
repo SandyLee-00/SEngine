@@ -13,6 +13,8 @@
 
 #include "Scene.h"
 
+#include "StartScene.h"
+
 GameEngine::~GameEngine()
 {
 
@@ -51,6 +53,11 @@ void GameEngine::Initialize(HWND hWnd, Renderer* renderer)
 
 	// ==== <Scene Initialize>
 	std::unordered_map<std::string, Scene*> scenes;
+
+	Scene* startScene = new StartScene();
+	scenes.insert(std::make_pair("StartScene", startScene));
+
+	m_sceneManager->Initialize(scenes, startScene);
 }
 
 void GameEngine::Process()
