@@ -1,5 +1,17 @@
 #include "GameEngine.h"
 
+#include "PathManager.h"
+#include "ResourceManager.h"
+#include "SoundManager.h"
+#include "TimeManager.h"
+#include "InputManager.h"
+#include "SceneManager.h"
+#include "CameraManager.h"
+#include "CollisionManager.h"
+#include "UIManager.h"
+#include "AllManagers.h"
+
+
 GameEngine::GameEngine()
 {
 
@@ -12,11 +24,35 @@ GameEngine::~GameEngine()
 
 void GameEngine::Initialize(HWND hWnd, Renderer* renderer)
 {
-	// GameEngine Initialize
+	// ==== <GameEngine variable Initialize>
 	m_hWnd = hWnd;
 	m_renderer = renderer;
 
-	// Manager Initialize
+	// ==== <Manager new()>
+	
+	// Resource
+	m_pathManager = new PathManager();
+	m_resourceManager = new ResourceManager();
+	m_soundManager = new SoundManager();
+
+	// Life Cycle - main
+	m_timeManager = new TimeManager();
+	m_inputManager = new InputManager();
+	m_sceneManager = new SceneManager();
+	m_cameraManager = new CameraManager();
+
+	// Life Cycle - Physics
+	m_collisionManager = new CollisionManager();
+
+	// UI
+	m_UIManager = new UIManager();
+
+	// AllManagers
+	m_allManagers = new AllManagers();
+
+	// ==== <Manager Initialize>
+
+	m_allManagers->Initialize(m_pathManager, m_resourceManager, m_soundManager, m_timeManager, m_inputManager, m_sceneManager, m_cameraManager, m_collisionManager, m_UIManager);
 
 }
 

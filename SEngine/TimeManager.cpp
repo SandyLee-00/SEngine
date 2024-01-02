@@ -10,11 +10,16 @@ TimeManager::~TimeManager()
 
 }
 
-void TimeManager::Initalize()
+void TimeManager::Initialize()
 {
 	QueryPerformanceFrequency(&m_frequency); // 프로세서의 카운터 값의 빈도
 	QueryPerformanceCounter(&m_prevCount); // 이전 프레임의 카운터 값 
 	QueryPerformanceCounter(&m_curentCount);
+}
+
+void TimeManager::Finalize()
+{
+
 }
 
 void TimeManager::Update()

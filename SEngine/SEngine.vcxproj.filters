@@ -51,6 +51,36 @@
     <ClInclude Include="Renderer.h">
       <Filter>2_Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="IManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="AllManagers.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>3_2_Managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -81,6 +111,36 @@
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>2_Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="IManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="AllManagers.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>3_2_Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>3_2_Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

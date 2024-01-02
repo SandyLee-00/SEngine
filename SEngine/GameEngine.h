@@ -28,12 +28,16 @@ private:
 	class TimeManager* m_timeManager;
 	class InputManager* m_inputManager;
 	class SceneManager* m_sceneManager;
+	class CameraManager* m_cameraManager;
 
 	// Life Cycle - Physics
 	class CollisionManager* m_collisionManager;
 
 	// UI
 	class UIManager* m_UIManager;
+
+	// AllManager: 모든 매니저를 갖고있는 매니저
+	class AllManagers* m_allManagers;
 
 private:
 	HWND m_hWnd;
