@@ -8,6 +8,7 @@
 /// 4차원 벡터의 표현
 /// 이 구조는 네 개의 구성 요소 벡터(예: 메시 탄젠트, 셰이더의 파라미터)를 표현하기 위해 일부에서 사용됩니다.
 /// 그 외 대부분의 경우에는 Vector3가 사용됩니다.
+/// 
 /// 240103 이서영
 /// </summary>
 
@@ -39,6 +40,10 @@ struct Vector4
 	static const Vector4 One;
 	static const Vector4 Zero;
 
+	static const Vector4 UnitX;
+	static const Vector4 UnitY;
+	static const Vector4 UnitZ;
+	static const Vector4 UnitW;
 
 };
 
