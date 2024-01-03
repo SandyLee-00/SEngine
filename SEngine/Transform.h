@@ -2,6 +2,7 @@
 
 #include "Vector3.h"
 #include "Quaternion.h"
+#include "Matrix4x4.h"
 
 /// <summary>
 /// Position + Rotation + Scaleø° ¥Î«— 3D Transform
@@ -12,9 +13,13 @@
 
 struct Transform
 {
-
 	// Properties
 	Vector3 position;
 	Quaternion rotation;
+	Vector3 scale;
+
+	// Constructors
+	Transform() = default;
+	// Transform(const Matrix4x4& inMatrix);
 };
 

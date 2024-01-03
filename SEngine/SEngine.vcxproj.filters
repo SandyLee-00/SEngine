@@ -102,6 +102,9 @@
     <ClInclude Include="Quaternion.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Matrix4x4.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -175,7 +178,12 @@
     <ClCompile Include="Vector3.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
-    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4x4.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">
