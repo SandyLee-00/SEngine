@@ -2,6 +2,12 @@
 
 #include <xmmintrin.h>
 
+/// <summary>
+/// Math::__ 해서 사용 
+/// static 변수, 함수, 템플릿 함수를 담아둔다 
+/// 
+/// 240103 이서영
+/// </summary>
 struct Math
 {
 	static constexpr float PI = { 3.14159265358979323846f };

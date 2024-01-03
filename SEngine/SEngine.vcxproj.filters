@@ -93,6 +93,9 @@
     <ClInclude Include="MathUtill.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -158,6 +161,9 @@
       <Filter>4_Script</Filter>
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
   </ItemGroup>
