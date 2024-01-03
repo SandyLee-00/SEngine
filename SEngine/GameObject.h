@@ -15,8 +15,9 @@ public:
 	virtual ~GameObject();
 
 	void Start();
-	void Update();
-	void Render();
+	void FixedUpdate(float FIXED_DELTATIME);
+	void Update(float deltaTime);
+	void Render(class Renderer* renderer);
 
 public:
 	ObjectType GetObjectType() const { return m_objectType; }

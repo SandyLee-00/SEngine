@@ -15,12 +15,18 @@ void GameObject::Start()
 
 }
 
-void GameObject::Update()
+void GameObject::FixedUpdate(float FIXED_DELTATIME)
 {
 
 }
 
-void GameObject::Render()
+void GameObject::Update(float deltaTime)
 {
 
 }
+
+void GameObject::Render(Renderer* renderer)
+{
+
+}
+

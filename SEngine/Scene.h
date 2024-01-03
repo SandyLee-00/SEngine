@@ -23,8 +23,9 @@ public:
 public:
 	// 해당 씬의 GameObject에 있는 함수를 타입별로 호출
 	void Start();
-	void Update();
-	void Render();
+	void FixedUpdate(float FIXED_DELTATIME);
+	void Update(float deltaTime);
+	void Render(class Renderer* renderer);
 
 public:
 	// Scene의 공통 기능

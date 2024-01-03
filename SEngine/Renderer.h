@@ -12,5 +12,6 @@ public:
 
 public:
 	void BeginRender();
+	void EndRender();
 };
 

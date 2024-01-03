@@ -97,6 +97,8 @@ void GameEngine::Process()
 	// GameObject Render 현재 씬에 있는 GameObject에 있는 Render 대상인 Component MeshRenderer
 	m_sceneManager->Render(m_renderer);
 
+	m_renderer->EndRender();
+
 	// DebugRender Time/Scene/Camera
 
 

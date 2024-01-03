@@ -24,3 +24,8 @@ void Renderer::BeginRender()
 {
 
 }
+
+void Renderer::EndRender()
+{
+
+}
