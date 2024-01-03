@@ -105,6 +105,7 @@
     <ClInclude Include="Matrix4x4.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Vector4.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -184,6 +185,7 @@
     <ClCompile Include="Matrix4x4.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
+    <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">
