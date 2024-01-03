@@ -54,12 +54,10 @@ void GameEngine::Initialize(HWND hWnd, Renderer* renderer)
 	m_allManagers->Initialize(m_pathManager, m_resourceManager, m_soundManager, m_timeManager, m_inputManager, m_sceneManager, m_cameraManager, m_collisionManager, m_UIManager);
 
 	// ==== <Scene Initialize>
-	std::unordered_map<std::string, Scene*> scenes;
-
 	Scene* startScene = new StartScene();
-	scenes.insert(std::make_pair("StartScene", startScene));
+	m_scenes.insert(std::make_pair("StartScene", startScene));
 
-	m_sceneManager->Initialize(scenes, startScene);
+	m_sceneManager->Initialize(m_scenes, startScene);
 }
 
 void GameEngine::Process()

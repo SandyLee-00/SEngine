@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <unordered_map>
 #include <vector>
+#include <string>
 
 /// <summary>
 /// 게임 엔진 Life Cycle을 관리하는 클래스
@@ -43,7 +44,7 @@ private:
 
 private:
 	// Scene들 Unordered_map에 넣어서 KeyValue로 사용
-	std::vector<class Scene*> m_scenes;
+	std::unordered_map<std::string, class Scene*> m_scenes;
 	float m_elapsedPhysicsTime;
 
 private:
