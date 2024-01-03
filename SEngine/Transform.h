@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vector3.h"
+#include "Quaternion.h"
 
 /// <summary>
 /// Position + Rotation + Scaleø° ¥Î«— 3D Transform
@@ -14,6 +15,6 @@ struct Transform
 
 	// Properties
 	Vector3 position;
-
+	Quaternion rotation;
 };
 

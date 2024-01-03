@@ -139,6 +139,7 @@
     <ClInclude Include="MathUtill.h" />
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="PathManager.h" />
+    <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="EntryPoint.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="IManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="PathManager.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Scene.cpp" />
