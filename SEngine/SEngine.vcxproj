@@ -136,6 +136,7 @@
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="IManager.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MathUtill.h" />
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="Renderer.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="UIManager.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllManagers.cpp" />
@@ -169,6 +171,7 @@
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="UIManager.cpp" />
+    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc" />

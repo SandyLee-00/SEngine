@@ -87,6 +87,12 @@
     <ClInclude Include="StartScene.h">
       <Filter>4_Script</Filter>
     </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathUtill.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -150,6 +156,9 @@
     </ClCompile>
     <ClCompile Include="StartScene.cpp">
       <Filter>4_Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>1_Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
