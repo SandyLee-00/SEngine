@@ -152,6 +152,7 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AllManagers.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc" />

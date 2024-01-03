@@ -1,7 +1,7 @@
 #pragma once
 
 /// <summary>
-/// Vector2
+/// Vector2: x, y
 /// TODO: FORCEINLINE / constexpr header에 옮겨서 최적화 하기
 /// 
 /// 240103 이서영
