@@ -24,8 +24,8 @@ struct Vector2
 	// Operators
 	Vector2 operator+(const Vector2& inVector) const;
 	Vector2 operator-(const Vector2& inVector) const;
-	Vector2 operator*(float inVector) const;
-	Vector2 operator/(float inVector) const;
+	Vector2 operator*(float InScalar) const;
+	Vector2 operator/(float InScalar) const;
 
 	// Properties
 	float x;

@@ -9,10 +9,9 @@ const Vector2 Vector2::Right(1.0f, 0.0f);
 const Vector2 Vector2::Zero(0.0f, 0.0f);
 const Vector2 Vector2::One(1.0f, 1.0f);
 
-
 void Vector2::Normalize()
 {
-	
+	*this = GetNormalize();
 }
 
 Vector2 Vector2::GetNormalize() const
@@ -31,6 +30,11 @@ Vector2 Vector2::GetNormalize() const
 	return Vector2(x, y) * invLength;
 }
 
+float Vector2::Dot(const Vector2& inVector) const
+{
+	return x * inVector.x + y * inVector.y;
+}
+
 Vector2 Vector2::operator+(const Vector2& inVector) const
 {
 	return Vector2(x + inVector.x, y + inVector.y);
@@ -41,12 +45,12 @@ Vector2 Vector2::operator-(const Vector2& inVector) const
 	return Vector2(x - inVector.x, y - inVector.y);
 }
 
-Vector2 Vector2::operator*(float inVector) const
+Vector2 Vector2::operator*(float InScalar) const
 {
-	return Vector2(x * inVector, y * inVector);
+	return Vector2(x * InScalar, y * InScalar);
 }
 
-Vector2 Vector2::operator/(float inVector) const
+Vector2 Vector2::operator/(float InScalar) const
 {
-	return Vector2(x / inVector, y / inVector);
+	return Vector2(x / InScalar, y / InScalar);
 }
