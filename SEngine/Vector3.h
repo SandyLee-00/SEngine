@@ -4,9 +4,12 @@
 /// Vector3: x, y, z
 /// TODO: FORCEINLINE / constexpr header에 옮겨서 최적화 하기
 /// 
+/// https://docs.unity3d.com/ScriptReference/Vector3.html
+/// 3D 벡터 및 포인트 표현, 계산
+/// Unity 전체에서 3D 위치와 방향을 전달하는 데 사용됩니다. 일반적인 벡터 연산을 수행하는 함수도 포함되어 있습니다.
+/// 
 /// 240103 이서영
 /// </summary>
-
 struct Vector3
 {
 	// Constructors

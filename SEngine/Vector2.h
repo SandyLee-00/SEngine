@@ -4,9 +4,13 @@
 /// Vector2: x, y
 /// TODO: FORCEINLINE / constexpr header에 옮겨서 최적화 하기
 /// 
+/// https://docs.unity3d.com/ScriptReference/Vector2.html
+/// 2D 벡터와 점의 표현
+///  2D 위치 및 벡터(예: 메시의 텍스처 좌표 또는 머티리얼의 텍스처 오프셋)를 표현하기 위해 일부에서 사용됩니다. 
+/// 그 외 대부분의 경우에는 Vector3가 사용됩니다.
+/// 
 /// 240103 이서영
 /// </summary>
-
 struct Vector2
 {
 	// Constructors
