@@ -15,8 +15,7 @@ struct Rotator
 
 	// Public Methods
 	void Clamp();
-	//void GetClampedDegree(float )
-
+	float GetClampedAngleValue(float inAngle);
 
 	static const Rotator Identity;
 
