@@ -3,6 +3,7 @@
 #include "Vector3.h"
 #include "Quaternion.h"
 #include "Matrix4x4.h"
+#include "Rotator.h"
 
 /// <summary>
 /// Position + Rotation + Scaleø° ¥Î«— 3D Transform
@@ -26,7 +27,7 @@ struct Transform
 
 	// Public Methods
 	void SetPosition(const Vector3& inPosition) { position = inPosition; }
-	// void SetRotation(const Rotator& inRotator) { rotation = Quaternion(inRotator); })
+	void SetRotation(const Rotator& inRotator) { rotation = Quaternion(inRotator); }
 	void SetRotation(const Quaternion& inRotation) { rotation = inRotation; }
 	void SetScale(const Vector3& inScale) { scale = inScale; }
 	void SetTransformMatrix(const Matrix4x4& inMatrix);

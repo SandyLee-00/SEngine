@@ -1,8 +1,31 @@
 #include <cmath>
 #include "Quaternion.h"
-
+#include "Rotator.h"
 
 const Quaternion Quaternion::Identity(0.f, 0.f, 0.f, 1.f);
+
+/// <summary>
+/// Euler Angle를 가지고 있는 Rotator를 쿼터니언으로 변환
+/// </summary>
+/// <param name="inRotator"></param>
+Quaternion::Quaternion(const Rotator& inRotator)
+{
+	float sinPitch = 0.f, sinYaw = 0.f, sinRoll = 0.f;
+	float cosPitch = 0.f, cosYaw = 0.f, cosRoll = 0.f;
+
+	sinPitch = sinf(inRotator.pitch * 0.5f);
+	sinYaw = sinf(inRotator.yaw * 0.5f);
+	sinRoll = sinf(inRotator.roll * 0.5f);
+
+	cosPitch = cosf(inRotator.pitch * 0.5f);
+	cosYaw = cosf(inRotator.yaw * 0.5f);
+	cosRoll = cosf(inRotator.roll * 0.5f);
+
+	w = sinYaw * sinPitch * sinRoll + cosYaw * cosPitch * cosRoll;
+	x = sinYaw * sinRoll * cosPitch + sinPitch * cosRoll * cosYaw;
+	y = sinYaw * cosPitch * cosRoll - sinPitch * sinRoll * cosYaw;
+	z = -sinYaw * sinPitch * cosRoll + sinRoll * cosYaw * cosPitch;
+}
 
 /// <summary>
 /// 두 회전 a와 b 사이의 각도를 도 단위로 반환합니다.
