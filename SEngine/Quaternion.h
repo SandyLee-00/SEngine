@@ -8,6 +8,7 @@
 /// 
 /// TODO: Angle / Euler / FromToRotation / LookRotation 구현 필요
 /// 
+/// https://en.wikipedia.org/wiki/Quaternion
 /// https://docs.unity3d.com/ScriptReference/Quaternion.html
 /// 쿼터니언은 회전을 표현하는 데 사용됩니다.
 /// 크기가 작고 짐벌 락의 영향을 받지 않으며 쉽게 보간할 수 있습니다. 
