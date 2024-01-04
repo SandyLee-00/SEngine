@@ -8,8 +8,9 @@
 /// Transform <-> Matrix4x4 변환
 /// float 16개 4줄로 4개씩 
 /// 
-/// TODO: Vector4개 -> float 16개로 바꾸기
+/// TODO: Vector4 4개 -> float 16개로 바꾸기
 /// 
+/// https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/Math/Matrix.h
 /// https://docs.unity3d.com/ScriptReference/Matrix4x4.html
 /// transformation matrix는 임의의 3D transformations(예: 이동, 회전, 스케일, 전단 등)과 homogenous coordinates를 사용한 perspective transformations을 수행할 수 있습니다. 
 /// 스크립트에서 행렬을 사용하는 경우는 거의 없으며, 대부분 Vector3, 쿼터니언 및 Transform 클래스의 기능을 사용하는 것이 더 간단합니다.

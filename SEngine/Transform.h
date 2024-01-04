@@ -12,6 +12,7 @@
 /// 
 /// TODO: Component로 분리
 /// 
+/// https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/Math/TransformCalculus.h
 /// https://docs.unity3d.com/ScriptReference/Transform.html
 /// object의 위치, 회전 및 배율을 저장, 조정합니다.
 /// 씬의 모든 오브젝트에는 트랜스폼이 있습니다. 
@@ -22,6 +23,7 @@ struct Transform
 {
 	// Constructors
 	Transform() = default;
+	Transform(const Vector3 inPosition) : position(inPosition) {}
 	Transform(const Vector3& inPosition, const Quaternion& inRotation, const Vector3& inScale) : position(inPosition), rotation(inRotation), scale(inScale) {}
 	Transform(const Matrix4x4& inMatrix);
 
@@ -41,6 +43,8 @@ struct Transform
 	void AddYawRotation(float inYawDegree);
 	void AddPitchRotation(float inPitchDegree);
 	void AddRollRotation(float inRollDegree);
+
+	Transform Inverse() const;
 
 
 	// Operators
