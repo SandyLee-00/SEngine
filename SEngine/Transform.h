@@ -26,6 +26,7 @@ struct Transform
 
 	// Public Methods
 	void SetPosition(const Vector3& inPosition) { position = inPosition; }
+	// void SetRotation(const Rotator& inRotator) { rotation = Quaternion(inRotator); })
 	void SetRotation(const Quaternion& inRotation) { rotation = inRotation; }
 	void SetScale(const Vector3& inScale) { scale = inScale; }
 	void SetTransformMatrix(const Matrix4x4& inMatrix);
@@ -36,7 +37,9 @@ struct Transform
 	Matrix4x4 GetTransformMatrix() const;
 
 	void AddPosition(const Vector3& inPosition) { position += inPosition; }
-
+	void AddYawRotation(float inYawDegree);
+	void AddPitchRotation(float inPitchDegree);
+	void AddRollRotation(float inRollDegree);
 
 
 	// Operators
