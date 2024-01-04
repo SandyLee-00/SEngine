@@ -30,6 +30,11 @@ struct Vector3
 	Vector3 operator*(float InScalar) const;
 	Vector3 operator/(float InScalar) const;
 
+	Vector3& operator+=(const Vector3& inVector);
+	Vector3& operator-=(const Vector3& inVector);
+	Vector3& operator*=(float InScalar);
+	Vector3& operator/=(float InScalar);
+
 	// Properties
 	float x;
 	float y;

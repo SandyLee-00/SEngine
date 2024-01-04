@@ -65,3 +65,35 @@ Vector3 Vector3::operator/(float InScalar) const
 {
 	return Vector3(x / InScalar, y / InScalar, z / InScalar);
 }
+
+Vector3& Vector3::operator+=(const Vector3& inVector)
+{
+	x += inVector.x;
+	y += inVector.y;
+	z += inVector.z;
+	return *this;
+}
+
+Vector3& Vector3::operator-=(const Vector3& inVector)
+{
+	x -= inVector.x;
+	y -= inVector.y;
+	z -= inVector.z;
+	return *this;
+}
+
+Vector3& Vector3::operator*=(float InScalar)
+{
+	x *= InScalar;
+	y *= InScalar;
+	z *= InScalar;
+	return *this;
+}
+
+Vector3& Vector3::operator/=(float InScalar)
+{
+	x /= InScalar;
+	y /= InScalar;
+	z /= InScalar;
+	return *this;
+}
