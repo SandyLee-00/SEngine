@@ -120,6 +120,12 @@
     <ClInclude Include="Rectangle.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -212,6 +218,12 @@
       <Filter>1_Math</Filter>
     </ClCompile>
     <ClCompile Include="Rectangle.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
   </ItemGroup>
