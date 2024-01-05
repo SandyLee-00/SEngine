@@ -35,14 +35,15 @@ Quaternion::Quaternion(const struct Matrix3x3& inMatrix)
 	float root = 0.f;
 	float trace = inMatrix[0][0] + inMatrix[1][1] + inMatrix[2][2];
 
-// 	if (!Math::EqualsInTolerance(inMatrix[0].SizeSquared(), 1.f) || !Math::EqualsInTolerance(inMatrix[1].SizeSquared(), 1.f) || !Math::EqualsInTolerance(InMatrix[2].SizeSquared(), 1.f))
-// 	{
-// 		*this = Quaternion::Identity;
-// 	}
+	// 각 행 벡터가 단위 벡터인지 확인
+	if (!Math::EqualsInTolerance(inMatrix[0].SizeSquared(), 1.f) || !Math::EqualsInTolerance(inMatrix[1].SizeSquared(), 1.f) || !Math::EqualsInTolerance(InMatrix[2].SizeSquared(), 1.f))
+	{
+		*this = Quaternion::Identity;
+	}
 // 
 // 	if (trace > 0.f)
 // 	{
-// 		// W 요소를 구하고 나머지 X,Y,Z를 계산
+// 		// W 요소를 구하고 나머지 X,Y,Z를 계산zd
 // 		root = sqrtf(trace + 1.f);
 // 		W = 0.5f * root;
 // 		root = 0.5f / root;

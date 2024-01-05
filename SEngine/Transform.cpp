@@ -68,20 +68,9 @@ void Transform::AddRollRotation(float inRollDegree)
 Transform Transform::Inverse() const
 {
 	Vector3 reciprocalScale = Vector3::Zero;
-
-	// 1 / 0 아닌지 체크하기
-	if (abs(scale.x - 0.0f) > Math::SMALL_NUMBER)
-	{
-		reciprocalScale.x = 1.0f / scale.x;
-	}
-	if (abs(scale.y - 0.0f) > Math::SMALL_NUMBER)
-	{
-		reciprocalScale.y = 1.0f / scale.y;
-	}
-	if (abs(scale.z - 0.0f) > Math::SMALL_NUMBER)
-	{
-		reciprocalScale.z = 1.0f / scale.z;
-	}
+	if (!Math::EqualsInTolerance(scale.x, 0.f)) reciprocalScale.x = 1.f / scale.x;
+	if (!Math::EqualsInTolerance(scale.y, 0.f)) reciprocalScale.y = 1.f / scale.y;
+	if (!Math::EqualsInTolerance(scale.z, 0.f)) reciprocalScale.z = 1.f / scale.z;
 
 	Transform result;
 	result.scale = reciprocalScale;

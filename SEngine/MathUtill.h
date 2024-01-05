@@ -51,16 +51,6 @@ struct Math
 	}
 
 	/// <summary>
-	/// float -> 소수점 뒤자리 잘린 int 반환
-	/// </summary>
-	/// <param name="inFloat"></param>
-	/// <returns></returns>
-	static constexpr int TruncToInt(float inFloat)
-	{
-		return (int)inFloat;
-	}
-
-	/// <summary>
 	/// X % Y: float형의 나머지 연산
 	/// </summary>
 	/// <param name="x"></param>
@@ -125,5 +115,27 @@ struct Math
 
 		_mm_store_ss(&temp, X2);
 		return temp;
+	}
+
+	/// <summary>
+	/// float -> 소수점 뒤자리 잘린 int 반환
+	/// </summary>
+	/// <param name="inFloat"></param>
+	/// <returns></returns>
+	static constexpr int TruncToInt(float inFloat)
+	{
+		return (int)inFloat;
+	}
+
+	/// <summary>
+	/// float1 == float2: 두 값이 같은지 비교
+	/// </summary>
+	/// <param name="InFloat1"></param>
+	/// <param name="InFloat2"></param>
+	/// <param name="InTolerance"></param>
+	/// <returns></returns>
+	static constexpr bool EqualsInTolerance(float InFloat1, float InFloat2, float InTolerance = SMALL_NUMBER)
+	{
+		return abs(InFloat1 - InFloat2) <= InTolerance;
 	}
 };
