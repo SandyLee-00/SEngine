@@ -134,7 +134,7 @@ struct Math
 	/// <param name="InFloat2"></param>
 	/// <param name="InTolerance"></param>
 	/// <returns></returns>
-	static constexpr bool EqualsInTolerance(float InFloat1, float InFloat2, float InTolerance = SMALL_NUMBER)
+	static bool EqualsInTolerance(float InFloat1, float InFloat2, float InTolerance = SMALL_NUMBER)
 	{
 		return abs(InFloat1 - InFloat2) <= InTolerance;
 	}

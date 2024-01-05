@@ -36,7 +36,7 @@ Quaternion::Quaternion(const struct Matrix3x3& inMatrix)
 	float trace = inMatrix[0][0] + inMatrix[1][1] + inMatrix[2][2];
 
 	// 각 행 벡터가 단위 벡터인지 확인
-	if (!Math::EqualsInTolerance(inMatrix[0].SizeSquared(), 1.f) || !Math::EqualsInTolerance(inMatrix[1].SizeSquared(), 1.f) || !Math::EqualsInTolerance(InMatrix[2].SizeSquared(), 1.f))
+	if (!Math::EqualsInTolerance(inMatrix[0].SizeSquared(), 1.f) || !Math::EqualsInTolerance(inMatrix[1].SizeSquared(), 1.f) || !Math::EqualsInTolerance(inMatrix[2].SizeSquared(), 1.f))
 	{
 		*this = Quaternion::Identity;
 	}
