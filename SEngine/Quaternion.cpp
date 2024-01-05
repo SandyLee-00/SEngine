@@ -1,7 +1,9 @@
-#include <cmath>
 #include "Quaternion.h"
+#include <cmath>
 #include "Rotator.h"
 #include "MathUtill.h"
+#include "Matrix3x3.h"
+#include "Vector3.h"
 
 const Quaternion Quaternion::Identity(0.f, 0.f, 0.f, 1.f);
 
@@ -26,6 +28,57 @@ Quaternion::Quaternion(const Rotator& inRotator)
 	x = sinYaw * sinRoll * cosPitch + sinPitch * cosRoll * cosYaw;
 	y = sinYaw * cosPitch * cosRoll - sinPitch * sinRoll * cosYaw;
 	z = -sinYaw * sinPitch * cosRoll + sinRoll * cosYaw * cosPitch;
+}
+
+Quaternion::Quaternion(const struct Matrix3x3& inMatrix)
+{
+	float root = 0.f;
+	float trace = inMatrix[0][0] + inMatrix[1][1] + inMatrix[2][2];
+
+// 	if (!Math::EqualsInTolerance(inMatrix[0].SizeSquared(), 1.f) || !Math::EqualsInTolerance(inMatrix[1].SizeSquared(), 1.f) || !Math::EqualsInTolerance(InMatrix[2].SizeSquared(), 1.f))
+// 	{
+// 		*this = Quaternion::Identity;
+// 	}
+// 
+// 	if (trace > 0.f)
+// 	{
+// 		// W 요소를 구하고 나머지 X,Y,Z를 계산
+// 		root = sqrtf(trace + 1.f);
+// 		W = 0.5f * root;
+// 		root = 0.5f / root;
+// 
+// 		X = (inMatrix[1][2] - inMatrix[2][1]) * root;
+// 		Y = (inMatrix[2][0] - inMatrix[0][2]) * root;
+// 		Z = (inMatrix[0][1] - inMatrix[1][0]) * root;
+// 	}
+// 	else
+// 	{
+// 		BYTE i = 0;
+// 
+// 		// X,Y,Z 중에서 가장 큰 요소를 파악
+// 		if (inMatrix[1][1] > inMatrix[0][0]) { i = 1; }
+// 		if (inMatrix[2][2] > inMatrix[i][i]) { i = 2; }
+// 
+// 		// i, j, k 의 순서 지정
+// 		static const BYTE next[3] = { 1, 2, 0 };
+// 		BYTE j = next[i];
+// 		BYTE k = next[j];
+// 
+// 		// 가장 큰 요소의 값을 구하기
+// 		root = sqrtf(inMatrix[i][i] - inMatrix[j][j] - inMatrix[k][k] + 1.f);
+// 
+// 		float* qt[3] = { &X, &Y, &Z };
+// 		*qt[i] = 0.5f * root;
+// 
+// 		root = 0.5f / root;
+// 
+// 		// 나머지 두 요소의 값을 구하기
+// 		*qt[j] = (inMatrix[i][j] + inMatrix[j][i]) * root;
+// 		*qt[k] = (inMatrix[i][k] + inMatrix[k][i]) * root;
+// 
+// 		// 마지막 W 값 구하기
+// 		W = (inMatrix[j][k] - inMatrix[k][j]) * root;
+// 	}
 }
 
 Rotator Quaternion::ToRotator() const

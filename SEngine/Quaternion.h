@@ -34,8 +34,9 @@ struct Quaternion
 	// Constructors
 	Quaternion() = default;
 	Quaternion(float inX, float inY, float inZ, float inW) : x(inX), y(inY), z(inZ), w(inW) {}
-	// TODO: √‡ + ∞¢µµ / Rotator / Vector3 / Matrix3x3
+	
 	Quaternion(const struct Rotator& inRotator);
+	Quaternion(const struct Matrix3x3& inMatrix);
 
 	// Public Methods
 	Quaternion Inverse() const { return Quaternion(-x, -y, -z, w); }

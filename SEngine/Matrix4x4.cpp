@@ -20,6 +20,15 @@ Matrix4x4 Matrix4x4::Transpose() const
 	);
 }
 
+Matrix3x3 Matrix4x4::ToMatrix3x3() const
+{
+	Vector3 col0(cols[0].x, cols[0].y, cols[0].z);
+	Vector3 col1(cols[1].x, cols[1].y, cols[1].z);
+	Vector3 col2(cols[2].x, cols[2].y, cols[2].z);
+
+	return Matrix3x3(col0, col1, col2);
+}
+
 const Vector4& Matrix4x4::operator[](unsigned int inIndex) const
 {
 	assert(inIndex < colCount);

@@ -3,6 +3,7 @@
 #include <array>
 
 #include "Vector4.h"
+#include "Matrix3x3.h"
 
 /// <summary>
 /// Transform <-> Matrix4x4 º¯È¯
@@ -26,6 +27,8 @@ struct Matrix4x4
 
 	//Public Methods
 	Matrix4x4 Transpose() const;
+
+	Matrix3x3 ToMatrix3x3() const;
 
 	// Operators
 	const Vector4& operator[](unsigned int inIndex) const;

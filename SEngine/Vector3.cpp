@@ -1,4 +1,5 @@
 #include "Vector3.h"
+#include <cassert>
 #include "MathUtill.h"
 
 const Vector3 Vector3::Up = Vector3(0.f, 1.f, 0.f);
@@ -37,9 +38,9 @@ Vector3 Vector3::GetNormalize() const
 	return Vector3(x * invLength, y * invLength, z * invLength);
 }
 
-Vector3 Vector3::SizeSquared() const
+float Vector3::SizeSquared() const
 {
-	return Vector3(x * x, y * y, z * z);
+	return x * x + y * y + z * z;
 }
 
 float Vector3::Dot(const Vector3& inVector) const
@@ -115,4 +116,46 @@ Vector3& Vector3::operator/=(float InScalar)
 	y /= InScalar;
 	z /= InScalar;
 	return *this;
+}
+
+float Vector3::operator[](unsigned int inIndex) const
+{
+	if (inIndex == 0)
+	{
+		return x;
+	}
+	else if (inIndex == 1)
+	{
+		return y;
+	}
+	else if (inIndex == 2)
+	{
+		return z;
+	}
+	else
+	{
+		assert(false && "Vector3 inIndex != 0, 1, 2");
+		return 0.f;
+	}
+}
+
+float& Vector3::operator[](unsigned int inIndex)
+{
+	if (inIndex == 0)
+	{
+		return x;
+	}
+	else if (inIndex == 1)
+	{
+		return y;
+	}
+	else if (inIndex == 2)
+	{
+		return z;
+	}
+	else
+	{
+		assert(false && "Vector3 inIndex != 0, 1, 2");
+		return x;
+	}
 }

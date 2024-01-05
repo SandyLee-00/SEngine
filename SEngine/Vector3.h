@@ -20,7 +20,8 @@ struct Vector3
 	// Static Methods
 	void Normalize();
 	Vector3 GetNormalize() const;
-	Vector3 SizeSquared() const;
+	
+	float SizeSquared() const;
 
 	float Dot(const Vector3& inVector) const;
 	Vector3 Cross(const Vector3& inVector) const;
@@ -39,6 +40,9 @@ struct Vector3
 	Vector3& operator-=(const Vector3& inVector);
 	Vector3& operator*=(float InScalar);
 	Vector3& operator/=(float InScalar);
+
+	float operator[](unsigned int inIndex) const;
+	float& operator[](unsigned int inIndex);
 
 	// Properties
 	float x;
