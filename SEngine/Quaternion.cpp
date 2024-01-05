@@ -40,46 +40,46 @@ Quaternion::Quaternion(const struct Matrix3x3& inMatrix)
 	{
 		*this = Quaternion::Identity;
 	}
-// 
-// 	if (trace > 0.f)
-// 	{
-// 		// W 요소를 구하고 나머지 X,Y,Z를 계산zd
-// 		root = sqrtf(trace + 1.f);
-// 		W = 0.5f * root;
-// 		root = 0.5f / root;
-// 
-// 		X = (inMatrix[1][2] - inMatrix[2][1]) * root;
-// 		Y = (inMatrix[2][0] - inMatrix[0][2]) * root;
-// 		Z = (inMatrix[0][1] - inMatrix[1][0]) * root;
-// 	}
-// 	else
-// 	{
-// 		BYTE i = 0;
-// 
-// 		// X,Y,Z 중에서 가장 큰 요소를 파악
-// 		if (inMatrix[1][1] > inMatrix[0][0]) { i = 1; }
-// 		if (inMatrix[2][2] > inMatrix[i][i]) { i = 2; }
-// 
-// 		// i, j, k 의 순서 지정
-// 		static const BYTE next[3] = { 1, 2, 0 };
-// 		BYTE j = next[i];
-// 		BYTE k = next[j];
-// 
-// 		// 가장 큰 요소의 값을 구하기
-// 		root = sqrtf(inMatrix[i][i] - inMatrix[j][j] - inMatrix[k][k] + 1.f);
-// 
-// 		float* qt[3] = { &X, &Y, &Z };
-// 		*qt[i] = 0.5f * root;
-// 
-// 		root = 0.5f / root;
-// 
-// 		// 나머지 두 요소의 값을 구하기
-// 		*qt[j] = (inMatrix[i][j] + inMatrix[j][i]) * root;
-// 		*qt[k] = (inMatrix[i][k] + inMatrix[k][i]) * root;
-// 
-// 		// 마지막 W 값 구하기
-// 		W = (inMatrix[j][k] - inMatrix[k][j]) * root;
-// 	}
+
+	if (trace > 0.f)
+	{
+		// W 요소를 구하고 나머지 X,Y,Z를 계산zd
+		root = sqrtf(trace + 1.f);
+		w = 0.5f * root;
+		root = 0.5f / root;
+
+		x = (inMatrix[1][2] - inMatrix[2][1]) * root;
+		y = (inMatrix[2][0] - inMatrix[0][2]) * root;
+		z = (inMatrix[0][1] - inMatrix[1][0]) * root;
+	}
+	else
+	{
+		unsigned int i = 0;
+
+		// X,Y,Z 중에서 가장 큰 요소를 파악
+		if (inMatrix[1][1] > inMatrix[0][0]) { i = 1; }
+		if (inMatrix[2][2] > inMatrix[i][i]) { i = 2; }
+
+		// i, j, k 의 순서 지정s
+		static const unsigned int next[3] = { 1, 2, 0 };
+		unsigned int j = next[i];
+		unsigned int k = next[j];
+
+		// 가장 큰 요소의 값을 구하기
+		root = sqrtf(inMatrix[i][i] - inMatrix[j][j] - inMatrix[k][k] + 1.f);
+
+		float* qt[3] = { &x, &y, &z };
+		*qt[i] = 0.5f * root;
+
+		root = 0.5f / root;
+
+		// 나머지 두 요소의 값을 구하기
+		*qt[j] = (inMatrix[i][j] + inMatrix[j][i]) * root;
+		*qt[k] = (inMatrix[i][k] + inMatrix[k][i]) * root;
+
+		// 마지막 W 값 구하기
+		w = (inMatrix[j][k] - inMatrix[k][j]) * root;
+	}
 }
 
 Rotator Quaternion::ToRotator() const
