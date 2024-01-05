@@ -111,6 +111,9 @@
     <ClInclude Include="Rotator.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Matrix3x3.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -194,6 +197,9 @@
       <Filter>1_Math</Filter>
     </ClCompile>
     <ClCompile Include="Rotator.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix3x3.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
   </ItemGroup>

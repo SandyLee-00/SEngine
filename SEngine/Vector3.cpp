@@ -37,6 +37,11 @@ Vector3 Vector3::GetNormalize() const
 	return Vector3(x * invLength, y * invLength, z * invLength);
 }
 
+Vector3 Vector3::SizeSquared() const
+{
+	return Vector3(x * x, y * y, z * z);
+}
+
 float Vector3::Dot(const Vector3& inVector) const
 {
 	return x * inVector.x + y * inVector.y + z * inVector.z;

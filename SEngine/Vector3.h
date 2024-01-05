@@ -20,6 +20,7 @@ struct Vector3
 	// Static Methods
 	void Normalize();
 	Vector3 GetNormalize() const;
+	Vector3 SizeSquared() const;
 
 	float Dot(const Vector3& inVector) const;
 	Vector3 Cross(const Vector3& inVector) const;
