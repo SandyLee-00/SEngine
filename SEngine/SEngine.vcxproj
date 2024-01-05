@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="AllManagers.h" />
     <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameEngine.h" />
@@ -142,6 +143,7 @@
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="EntryPoint.h" />
@@ -162,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="AllManagers.cpp" />
     <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -173,6 +176,7 @@
     <ClCompile Include="Matrix4x4.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Rotator.cpp" />

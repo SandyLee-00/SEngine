@@ -6,7 +6,7 @@
 #include "Rotator.h"
 
 /// <summary>
-/// Position + Rotation + Scale에 대한 3D Transform
+/// Position / Rotation / Scale에 대한 3D Transform
 /// Transform <-> Matrix4x4 변환
 /// Transform GameObject 관리 X Parent-Child 관계 표현 X
 /// 
@@ -48,7 +48,6 @@ struct Transform
 	void AddRollRotation(float inRollDegree);
 
 	Transform Inverse() const;
-
 
 	// Operators
 

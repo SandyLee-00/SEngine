@@ -114,6 +114,10 @@
     <ClInclude Include="Matrix3x3.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -202,6 +206,10 @@
     <ClCompile Include="Matrix3x3.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">
