@@ -25,8 +25,12 @@ struct Vector3
 	Vector3 Cross(const Vector3& inVector) const;
 
 	// Operators
+	Vector3 operator-() const;
+
 	Vector3 operator+(const Vector3& inVector) const;
 	Vector3 operator-(const Vector3& inVector) const;
+	Vector3 operator*(const Vector3& inVector) const;
+
 	Vector3 operator*(float InScalar) const;
 	Vector3 operator/(float InScalar) const;
 
@@ -51,6 +55,10 @@ struct Vector3
 
 	static const Vector3 Forward;
 	static const Vector3 Back;
+
+	static const Vector3 UnitX;
+	static const Vector3 UnitY;
+	static const Vector3 UnitZ;
 
 };
 

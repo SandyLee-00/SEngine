@@ -12,6 +12,10 @@ const Vector3 Vector3::One = Vector3(1.f, 1.f, 1.f);
 const Vector3 Vector3::Forward = Vector3(0.f, 0.f, 1.f);
 const Vector3 Vector3::Back = Vector3(0.f, 0.f, -1.f);
 
+const Vector3 Vector3::UnitX(1.f, 0.f, 0.f);
+const Vector3 Vector3::UnitY(0.f, 1.f, 0.f);
+const Vector3 Vector3::UnitZ(0.f, 0.f, 1.f);
+
 void Vector3::Normalize()
 {
 	*this = GetNormalize();
@@ -56,9 +60,19 @@ Vector3 Vector3::operator-(const Vector3& inVector) const
 	return Vector3(x - inVector.x, y - inVector.y, z - inVector.z);
 }
 
+Vector3 Vector3::operator-() const
+{
+	return Vector3(-x, -y, -z);
+}
+
 Vector3 Vector3::operator*(float InScalar) const
 {
 	return Vector3(x * InScalar, y * InScalar, z * InScalar);
+}
+
+Vector3 Vector3::operator*(const Vector3& inVector) const
+{
+	return Vector3(x * inVector.x, y * inVector.y, z * inVector.z);
 }
 
 Vector3 Vector3::operator/(float InScalar) const

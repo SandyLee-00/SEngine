@@ -35,9 +35,10 @@ struct Quaternion
 	Quaternion() = default;
 	Quaternion(float inX, float inY, float inZ, float inW) : x(inX), y(inY), z(inZ), w(inW) {}
 	// TODO: √‡ + ∞¢µµ / Rotator / Vector3 / Matrix3x3
-	Quaternion(const Rotator& inRotator);
+	Quaternion(const struct Rotator& inRotator);
 
 	// Public Methods
+	Quaternion Inverse() const { return Quaternion(-x, -y, -z, w); }
 
 	// Static Methods
 	static float Angle(const Quaternion& inQuaternion1, const Quaternion& inQuaternion2);
@@ -48,5 +49,6 @@ struct Quaternion
 
 	// Operators
 	Quaternion operator-() const;
+	Vector3 operator*(const Vector3& inVector) const;
 };
 

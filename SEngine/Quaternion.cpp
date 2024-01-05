@@ -120,3 +120,12 @@ Quaternion Quaternion::operator-() const
 {
 	return Quaternion(-x, -y, -z, -w);
 }
+
+Vector3 Quaternion::operator*(const Vector3& inVector) const
+{
+	Vector3 q(x, y, z);
+	Vector3 t = q.Cross(inVector) * 2.f;
+	
+	Vector3 result = inVector + (t * w) + q.Cross(t);
+	return result;
+}

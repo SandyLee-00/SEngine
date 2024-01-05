@@ -37,7 +37,11 @@ struct Transform
 	Vector3 GetPosition() const { return position; }
 	Quaternion GetRotation() const { return rotation; }
 	Vector3 GetScale() const { return scale; }
-	Matrix4x4 GetTransformMatrix() const;
+	Matrix4x4 GetMatrix() const;
+
+	Vector3 GetXAxis() const { return rotation * Vector3::UnitX; }
+	Vector3 GetYAxis() const { return rotation * Vector3::UnitY; }
+	Vector3 GetZAxis() const { return rotation * Vector3::UnitZ; }
 
 	void AddPosition(const Vector3& inPosition) { position += inPosition; }
 	void AddYawRotation(float inYawDegree);
