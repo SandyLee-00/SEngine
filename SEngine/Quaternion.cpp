@@ -1,6 +1,7 @@
 #include <cmath>
 #include "Quaternion.h"
 #include "Rotator.h"
+#include "MathUtill.h"
 
 const Quaternion Quaternion::Identity(0.f, 0.f, 0.f, 1.f);
 
@@ -25,6 +26,36 @@ Quaternion::Quaternion(const Rotator& inRotator)
 	x = sinYaw * sinRoll * cosPitch + sinPitch * cosRoll * cosYaw;
 	y = sinYaw * cosPitch * cosRoll - sinPitch * sinRoll * cosYaw;
 	z = -sinYaw * sinPitch * cosRoll + sinRoll * cosYaw * cosPitch;
+}
+
+Rotator Quaternion::ToRotator() const
+{
+	Rotator result;
+	float sinrCosp = 2 * (w * z + x * y);
+	float cosrCosp = 1 - 2 * (z * z + x * x);
+	result.roll = Math::ToDegree(atan2f(sinrCosp, cosrCosp));
+
+	float pitchTest = w * x - y * z;
+	float asinThreshold = 0.4999995f;
+	float sinp = 2 * pitchTest;
+	if (pitchTest < -asinThreshold)
+	{
+		result.pitch = -90.f;
+	}
+	else if (pitchTest > asinThreshold)
+	{
+		result.pitch = 90.f;
+	}
+	else
+	{
+		result.pitch = Math::ToDegree(asinf(sinp));
+	}
+
+	float sinyCosp = 2 * (w * y + x * z);
+	float cosyCosp = 1.f - 2 * (x * x + y * y);
+	result.yaw = Math::ToDegree(atan2f(sinyCosp, cosyCosp));
+
+	return result;
 }
 
 /// <summary>

@@ -39,6 +39,7 @@ struct Quaternion
 
 	// Public Methods
 	Quaternion Inverse() const { return Quaternion(-x, -y, -z, w); }
+	Rotator ToRotator() const;
 
 	// Static Methods
 	static float Angle(const Quaternion& inQuaternion1, const Quaternion& inQuaternion2);

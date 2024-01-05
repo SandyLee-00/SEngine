@@ -32,7 +32,6 @@ struct Transform
 	void SetRotation(const Rotator& inRotator) { rotation = Quaternion(inRotator); }
 	void SetRotation(const Quaternion& inRotation) { rotation = inRotation; }
 	void SetScale(const Vector3& inScale) { scale = inScale; }
-	void SetTransformMatrix(const Matrix4x4& inMatrix);
 
 	Vector3 GetPosition() const { return position; }
 	Quaternion GetRotation() const { return rotation; }
