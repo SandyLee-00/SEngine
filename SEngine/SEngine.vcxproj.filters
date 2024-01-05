@@ -117,7 +117,9 @@
     <ClInclude Include="Circle.h">
       <Filter>1_Math</Filter>
     </ClInclude>
-    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Rectangle.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -209,7 +211,9 @@
     <ClCompile Include="Circle.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
-    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">
