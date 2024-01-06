@@ -7,6 +7,11 @@
 #include "Sphere.h"
 #include "Box.h"
 
+/// <summary>
+/// Frustum과 BoundSphere / BoundBox / Vector3 point Check시 반환되는 결과값
+/// 
+/// 240106 이서영
+/// </summary>
 enum class BoundCheckResult : unsigned int
 {
 	Outside = 0,
