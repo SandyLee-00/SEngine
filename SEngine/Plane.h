@@ -15,7 +15,7 @@ struct Plane
 
 	// Public Methods
 	float Distance(const Vector3& inPoint) const;
-	bool IsOutSide(const Vector3& inPoint) const;
+	bool IsOutside(const Vector3& inPoint) const;
 
 	// Properties
 	Vector3 normal;

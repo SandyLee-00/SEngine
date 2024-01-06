@@ -4,6 +4,8 @@
 
 #include "Vector3.h"
 #include "Plane.h"
+#include "Sphere.h"
+#include "Box.h"
 
 enum class BoundCheckResult : unsigned int
 {
@@ -24,9 +26,11 @@ struct Frustum
 	Frustum() = default;
 
 	// Public Methods
-	
+	BoundCheckResult CheckBound(const Vector3& inPoint) const;
+	BoundCheckResult CheckBound(const Sphere& inSphere) const;
+	BoundCheckResult CheckBound(const Box& inBox) const;
 
 	// Properties
-	std::array<Plane, 6> Planes;
+	std::array<Plane, 6> planes;
 };
 
