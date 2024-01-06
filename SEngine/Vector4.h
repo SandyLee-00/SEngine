@@ -31,6 +31,8 @@ struct Vector4
 	float Dot(const Vector4& inVector) const;
 
 	// Operators
+	Vector4 operator-() const;
+
 	Vector4 operator+(const Vector4& inVector) const;
 	Vector4 operator-(const Vector4& inVector) const;
 	Vector4 operator*(float InScalar) const;

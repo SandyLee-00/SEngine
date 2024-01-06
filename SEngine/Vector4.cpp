@@ -48,6 +48,11 @@ Vector4 Vector4::operator-(const Vector4& inVector) const
 	return Vector4(x - inVector.x, y - inVector.y, z - inVector.z, w - inVector.w);
 }
 
+Vector4 Vector4::operator-() const
+{
+	return Vector4(-x, -y, -z, -w);
+}
+
 Vector4 Vector4::operator*(float InScalar) const
 {
 	return Vector4(x * InScalar, y * InScalar, z * InScalar, w * InScalar);
