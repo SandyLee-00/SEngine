@@ -16,8 +16,8 @@ struct Box
 	Box(const std::vector<Vector3>& points);
 
 	// Public Methods
-	bool IsInside(const Vector3& point) const;
-	bool IsIntersect(const Box& other) const;
+	bool IsInside(const Vector3& inPoint) const;
+	bool IsIntersect(const Box& otherBox) const;
 
 	// Properties
 	Vector3 min;

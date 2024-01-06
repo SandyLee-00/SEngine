@@ -29,13 +29,13 @@ Matrix3x3 Matrix4x4::ToMatrix3x3() const
 	return Matrix3x3(col0, col1, col2);
 }
 
-const Vector4& Matrix4x4::operator[](unsigned int inIndex) const
+const Vector4& Matrix4x4::operator[](unsigned char inIndex) const
 {
 	assert(inIndex < colCount);
 	return cols[inIndex];
 }
 
-Vector4& Matrix4x4::operator[](unsigned int inIndex)
+Vector4& Matrix4x4::operator[](unsigned char inIndex)
 {
 	assert(inIndex < colCount);
 	return cols[inIndex];

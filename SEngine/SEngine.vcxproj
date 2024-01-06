@@ -133,6 +133,7 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Frustum.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameProcess.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="ObjectType.h" />
     <ClInclude Include="PathManager.h" />
+    <ClInclude Include="Plane.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Renderer.h" />
@@ -169,6 +171,7 @@
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameProcess.cpp" />
@@ -178,6 +181,7 @@
     <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="Matrix4x4.cpp" />
     <ClCompile Include="PathManager.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Renderer.cpp" />

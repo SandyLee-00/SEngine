@@ -126,6 +126,12 @@
     <ClInclude Include="Sphere.h">
       <Filter>1_Math</Filter>
     </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>1_Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -224,6 +230,12 @@
       <Filter>1_Math</Filter>
     </ClCompile>
     <ClCompile Include="Sphere.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
       <Filter>1_Math</Filter>
     </ClCompile>
   </ItemGroup>

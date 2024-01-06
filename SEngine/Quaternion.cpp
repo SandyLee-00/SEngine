@@ -54,16 +54,16 @@ Quaternion::Quaternion(const struct Matrix3x3& inMatrix)
 	}
 	else
 	{
-		unsigned int i = 0;
+		unsigned char i = 0;
 
 		// X,Y,Z 중에서 가장 큰 요소를 파악
 		if (inMatrix[1][1] > inMatrix[0][0]) { i = 1; }
 		if (inMatrix[2][2] > inMatrix[i][i]) { i = 2; }
 
 		// i, j, k 의 순서 지정s
-		static const unsigned int next[3] = { 1, 2, 0 };
-		unsigned int j = next[i];
-		unsigned int k = next[j];
+		static const unsigned char next[3] = { 1, 2, 0 };
+		unsigned char j = next[i];
+		unsigned char k = next[j];
 
 		// 가장 큰 요소의 값을 구하기
 		root = sqrtf(inMatrix[i][i] - inMatrix[j][j] - inMatrix[k][k] + 1.f);

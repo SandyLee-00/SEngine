@@ -31,8 +31,8 @@ struct Matrix4x4
 	Matrix3x3 ToMatrix3x3() const;
 
 	// Operators
-	const Vector4& operator[](unsigned int inIndex) const;
-	Vector4& operator[](unsigned int inIndex);
+	const Vector4& operator[](unsigned char inIndex) const;
+	Vector4& operator[](unsigned char inIndex);
 
 	Matrix4x4 operator*(const Matrix4x4& inMatrix) const;
 	Matrix4x4 operator*(float inScalar) const;
@@ -42,7 +42,7 @@ struct Matrix4x4
 	// Static Properties
 	static const Matrix4x4 Identity;
 	static const Matrix4x4 Zero;
-	static constexpr unsigned int colCount = 4;
+	static constexpr unsigned char colCount = 4;
 
 	// Properties
 	std::array<Vector4, colCount> cols = { Vector4::UnitX, Vector4::UnitY, Vector4::UnitZ, Vector4::UnitW };

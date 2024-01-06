@@ -36,6 +36,9 @@ struct Vector4
 	Vector4 operator*(float InScalar) const;
 	Vector4 operator/(float InScalar) const;
 
+	float operator[](unsigned char inIndex) const;
+	float& operator[](unsigned char inIndex);
+
 	// Properties
 	float x;
 	float y;

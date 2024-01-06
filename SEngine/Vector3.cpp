@@ -118,7 +118,7 @@ Vector3& Vector3::operator/=(float InScalar)
 	return *this;
 }
 
-float Vector3::operator[](unsigned int inIndex) const
+float Vector3::operator[](unsigned char inIndex) const
 {
 	if (inIndex == 0)
 	{
@@ -139,7 +139,7 @@ float Vector3::operator[](unsigned int inIndex) const
 	}
 }
 
-float& Vector3::operator[](unsigned int inIndex)
+float& Vector3::operator[](unsigned char inIndex)
 {
 	if (inIndex == 0)
 	{

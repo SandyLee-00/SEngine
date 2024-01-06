@@ -17,13 +17,13 @@ Matrix3x3 Matrix3x3::Transpose() const
 	);
 }
 
-const Vector3& Matrix3x3::operator[](unsigned int inIndex) const
+const Vector3& Matrix3x3::operator[](unsigned char inIndex) const
 {
 	assert(inIndex < colCount);
 	return cols[inIndex];
 }
 
-Vector3& Matrix3x3::operator[](unsigned int inIndex)
+Vector3& Matrix3x3::operator[](unsigned char inIndex)
 {
 	assert(inIndex < colCount);
 	return cols[inIndex];

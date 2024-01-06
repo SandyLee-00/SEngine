@@ -1,4 +1,7 @@
 #include "Vector4.h"
+
+#include <cassert>
+
 #include "MathUtill.h"
 
 const Vector4 Vector4::Zero(0.f, 0.f, 0.f, 0.f);
@@ -53,4 +56,54 @@ Vector4 Vector4::operator*(float InScalar) const
 Vector4 Vector4::operator/(float InScalar) const
 {
 	return Vector4(x / InScalar, y / InScalar, z / InScalar, w / InScalar);
+}
+
+float Vector4::operator[](unsigned char inIndex) const
+{
+	if (inIndex == 0)
+	{
+		return x;
+	}
+	else if (inIndex == 1)
+	{
+		return y;
+	}
+	else if (inIndex == 2)
+	{
+		return z;
+	}
+	else if (inIndex == 3)
+	{
+		return w;
+	}
+	else
+	{
+		assert(false && "Vector4 inIndex != 0, 1, 2, 3");
+		return 0.f;
+	}
+}
+
+float& Vector4::operator[](unsigned char inIndex)
+{
+	if (inIndex == 0)
+	{
+		return x;
+	}
+	else if (inIndex == 1)
+	{
+		return y;
+	}
+	else if (inIndex == 2)
+	{
+		return z;
+	}
+	else if (inIndex == 3)
+	{
+		return w;
+	}
+	else
+	{
+		assert(false && "Vector4 inIndex != 0, 1, 2, 3");
+		return x;
+	}
 }

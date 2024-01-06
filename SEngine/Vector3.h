@@ -41,8 +41,8 @@ struct Vector3
 	Vector3& operator*=(float InScalar);
 	Vector3& operator/=(float InScalar);
 
-	float operator[](unsigned int inIndex) const;
-	float& operator[](unsigned int inIndex);
+	float operator[](unsigned char inIndex) const;
+	float& operator[](unsigned char inIndex);
 
 	// Properties
 	float x;

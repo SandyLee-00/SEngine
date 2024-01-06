@@ -20,8 +20,8 @@ struct Matrix3x3
 	Matrix3x3 Transpose() const;
 
 	// Operators
-	const Vector3& operator[](unsigned int inIndex) const;
-	Vector3& operator[](unsigned int inIndex);
+	const Vector3& operator[](unsigned char inIndex) const;
+	Vector3& operator[](unsigned char inIndex);
 
 	Matrix3x3 operator*(const Matrix3x3& inMatrix) const;
 	Matrix3x3 operator*(float inScalar) const;
@@ -31,7 +31,7 @@ struct Matrix3x3
 	// Static Properties
 	static const Matrix3x3 Identity;
 	static const Matrix3x3 Zero;
-	static constexpr unsigned int colCount = 3;
+	static constexpr unsigned char colCount = 3;
 
 	// Properties
 	std::array<Vector3, colCount> cols = { Vector3::UnitX, Vector3::UnitY, Vector3::UnitZ};

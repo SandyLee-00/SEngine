@@ -18,11 +18,11 @@ Box::Box(const std::vector<Vector3>& points)
 	}
 }
 
-bool Box::IsInside(const Vector3& point) const
+bool Box::IsInside(const Vector3& inPoint) const
 {
-	return (point.x >= min.x && point.x <= max.x) &&
-		(point.y >= min.y && point.y <= max.y) &&
-		(point.z >= min.z && point.z <= max.z);
+	return (inPoint.x >= min.x && inPoint.x <= max.x) &&
+		(inPoint.y >= min.y && inPoint.y <= max.y) &&
+		(inPoint.z >= min.z && inPoint.z <= max.z);
 }
 
 bool Box::IsIntersect(const Box& otherBox) const
