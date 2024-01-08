@@ -10,7 +10,7 @@
 class Component
 {
 public:
-	Component() = default;
+	Component();
 	virtual ~Component() {};
 
 	virtual void Start() {};
@@ -21,12 +21,10 @@ public:
 public:
 	ComponentOrder GetCallOrder() const { return m_componentType; }
 
-	const class AllManagers* GetAllManagers() const;
-
 	void SetGameObject(class GameObject* gameObject) { m_gameObject = gameObject; }
 
 public:
-	const class AllManagers* GetAllManagers() const { return m_allManagers; }
+	const class AllManagers* GetAllManagers() const;
 	const class PathManager* GetPathManager() const;
 	const class ResourceManager* GetResourceManager() const;
 	const class SoundManager* GetSoundManager() const;
@@ -41,6 +39,5 @@ private:
 	const ComponentOrder m_componentType;
 	class GameObject* m_gameObject;
 
-	const class AllManagers* m_allManagers;
 };
 

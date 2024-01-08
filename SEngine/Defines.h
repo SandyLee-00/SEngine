@@ -25,4 +25,5 @@ enum class ComponentOrder
 
 	BoxCollider,
 	SphereCollider,
+	End = 32
 };

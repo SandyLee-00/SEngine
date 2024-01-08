@@ -144,6 +144,9 @@
     <ClInclude Include="SphereCollider.h">
       <Filter>3_3_Components</Filter>
     </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>3_3_Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -257,6 +260,9 @@
       <Filter>3_3_Components</Filter>
     </ClCompile>
     <ClCompile Include="SphereCollider.cpp">
+      <Filter>3_3_Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
       <Filter>3_3_Components</Filter>
     </ClCompile>
   </ItemGroup>

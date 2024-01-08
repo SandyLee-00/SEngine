@@ -162,6 +162,7 @@
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="Transform.h" />
     <ClInclude Include="TransformMath.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Vector2.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="Transform.cpp" />
     <ClCompile Include="TransformMath.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Vector2.cpp" />
