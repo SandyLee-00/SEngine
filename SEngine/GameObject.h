@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ObjectType.h"
+#include "Defines.h"
 
 /// <summary>
 /// Scene에서 Update 하는 GameObject
@@ -20,10 +20,10 @@ public:
 	void Render(class Renderer* renderer);
 
 public:
-	ObjectType GetObjectType() const { return m_objectType; }
+	ObjectOrder GetObjectType() const { return m_objectType; }
 
 
 private:
-	ObjectType m_objectType;
+	ObjectOrder m_objectType;
 };
 

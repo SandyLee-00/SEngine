@@ -1,6 +1,6 @@
 #include "Scene.h"
 #include "GameObject.h"
-#include "ObjectType.h"
+#include "Defines.h"
 #include "Renderer.h"
 
 Scene::~Scene()
@@ -10,7 +10,7 @@ Scene::~Scene()
 
 void Scene::Start()
 {
-	for (int i = 0; i < static_cast<int>(ObjectType::End); ++i)
+	for (int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -21,7 +21,7 @@ void Scene::Start()
 
 void Scene::FixedUpdate(float FIXED_DELTATIME)
 {
-	for(int i = 0; i < static_cast<int>(ObjectType::End); ++i)
+	for(int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -32,7 +32,7 @@ void Scene::FixedUpdate(float FIXED_DELTATIME)
 
 void Scene::Update(float deltaTime)
 {
-	for (int i = 0; i < static_cast<int>(ObjectType::End); ++i)
+	for (int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -43,7 +43,7 @@ void Scene::Update(float deltaTime)
 
 void Scene::Render(class Renderer* renderer)
 {
-	for (int i = 0; i < static_cast<int>(ObjectType::End); ++i)
+	for (int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{

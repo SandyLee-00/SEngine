@@ -19,6 +19,9 @@
     <Filter Include="4_Script">
       <UniqueIdentifier>{6d969d54-278a-4d6c-a047-78000c804772}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3_3_Components">
+      <UniqueIdentifier>{94c20016-42cf-4125-b8d3-418ae438b89e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameProcess.h">
@@ -33,7 +36,7 @@
     <ClInclude Include="Scene.h">
       <Filter>3_Engine</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectType.h">
+    <ClInclude Include="Defines.h">
       <Filter>3_Engine</Filter>
     </ClInclude>
     <ClInclude Include="framework.h">
@@ -128,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="Frustum.h">
       <Filter>1_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>3_3_Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +237,9 @@
     </ClCompile>
     <ClCompile Include="Frustum.cpp">
       <Filter>1_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>3_3_Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

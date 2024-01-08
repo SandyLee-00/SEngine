@@ -22,7 +22,7 @@ void GameObject::FixedUpdate(float FIXED_DELTATIME)
 
 void GameObject::Update(float deltaTime)
 {
-
+	// 
 }
 
 void GameObject::Render(Renderer* renderer)

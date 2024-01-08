@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include "ObjectType.h"
+#include "Defines.h"
 
 /// <summary>
 /// Scene에 GameObject를 넣어서 ObjectType별로 update, render를 한다
@@ -39,7 +39,7 @@ private:
 	class Renderer* m_renderer;
 
 	// ObjectType에 따른 GameObject들
-	std::vector<class GameObject*> m_gameObjects[static_cast<int>(ObjectType::End)];
+	std::vector<class GameObject*> m_gameObjects[static_cast<int>(ObjectOrder::End)];
 
 };
 
