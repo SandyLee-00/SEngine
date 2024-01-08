@@ -129,8 +129,10 @@
   <ItemGroup>
     <ClInclude Include="AllManagers.h" />
     <ClInclude Include="Box.h" />
+    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="framework.h" />
@@ -156,10 +158,11 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SphereCollider.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TimeManager.h" />
-    <ClInclude Include="Transform.h" />
+    <ClInclude Include="TransformMath.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
@@ -168,8 +171,10 @@
   <ItemGroup>
     <ClCompile Include="AllManagers.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Frustum.cpp" />
@@ -191,9 +196,10 @@
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="TimeManager.cpp" />
-    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="TransformMath.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />

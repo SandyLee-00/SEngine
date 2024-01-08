@@ -1,4 +1,4 @@
-#include "Transform.h"
+#include "TransformMath.h"
 #include "MathUtill.h"
 #include "Vector4.h"
 #include "Vector3.h"
@@ -6,7 +6,7 @@
 #include "Matrix3x3.h"
 #include "Quaternion.h"
 
-Transform::Transform(const Matrix4x4& inMatrix)
+TransformMath::TransformMath(const Matrix4x4& inMatrix)
 {
 	// 스케일 회전 행렬만 분리
 	Matrix3x3 rotScaleMatrix = inMatrix.ToMatrix3x3();
@@ -31,7 +31,7 @@ Transform::Transform(const Matrix4x4& inMatrix)
 	rotation = Quaternion(rotScaleMatrix);
 }
 
-Matrix4x4 Transform::GetMatrix() const
+Matrix4x4 TransformMath::GetMatrix() const
 {
 	return Matrix4x4(
 		Vector4(GetXAxis() * scale.x, false),
@@ -41,7 +41,7 @@ Matrix4x4 Transform::GetMatrix() const
 	);
 }
 
-void Transform::AddYawRotation(float inYawDegree)
+void TransformMath::AddYawRotation(float inYawDegree)
 {
 	Rotator yawRotator = rotation.ToRotator();
 	yawRotator.yaw += inYawDegree;
@@ -49,7 +49,7 @@ void Transform::AddYawRotation(float inYawDegree)
 	rotation = Quaternion(yawRotator);
 }
 
-void Transform::AddPitchRotation(float inPitchDegree)
+void TransformMath::AddPitchRotation(float inPitchDegree)
 {
 	Rotator pitchRotator = rotation.ToRotator();
 	pitchRotator.pitch += inPitchDegree;
@@ -57,7 +57,7 @@ void Transform::AddPitchRotation(float inPitchDegree)
 	rotation = Quaternion(pitchRotator);
 }
 
-void Transform::AddRollRotation(float inRollDegree)
+void TransformMath::AddRollRotation(float inRollDegree)
 {
 	Rotator rollRotator = rotation.ToRotator();
 	rollRotator.roll += inRollDegree;
@@ -65,14 +65,14 @@ void Transform::AddRollRotation(float inRollDegree)
 	rotation = Quaternion(rollRotator);
 }
 
-Transform Transform::Inverse() const
+TransformMath TransformMath::Inverse() const
 {
 	Vector3 reciprocalScale = Vector3::Zero;
 	if (!Math::EqualsInTolerance(scale.x, 0.f)) reciprocalScale.x = 1.f / scale.x;
 	if (!Math::EqualsInTolerance(scale.y, 0.f)) reciprocalScale.y = 1.f / scale.y;
 	if (!Math::EqualsInTolerance(scale.z, 0.f)) reciprocalScale.z = 1.f / scale.z;
 
-	Transform result;
+	TransformMath result;
 	result.scale = reciprocalScale;
 	result.rotation = rotation.Inverse();
 	result.position = result.scale * (result.rotation * -position);

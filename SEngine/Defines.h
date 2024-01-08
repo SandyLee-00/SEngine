@@ -20,5 +20,9 @@ enum class ObjectOrder
 /// </summary>
 enum class ComponentOrder
 {
+	RigidBody,
 	Transform,
+
+	BoxCollider,
+	SphereCollider,
 };

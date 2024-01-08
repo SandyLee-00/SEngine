@@ -19,13 +19,13 @@
 /// 
 /// 240103 ¿Ãº≠øµ
 /// </summary>
-struct Transform
+struct TransformMath
 {
 	// Constructors
-	Transform() = default;
-	Transform(const Vector3 inPosition) : position(inPosition) {}
-	Transform(const Vector3& inPosition, const Quaternion& inRotation, const Vector3& inScale) : position(inPosition), rotation(inRotation), scale(inScale) {}
-	Transform(const Matrix4x4& inMatrix);
+	TransformMath() = default;
+	TransformMath(const Vector3 inPosition) : position(inPosition) {}
+	TransformMath(const Vector3& inPosition, const Quaternion& inRotation, const Vector3& inScale) : position(inPosition), rotation(inRotation), scale(inScale) {}
+	TransformMath(const Matrix4x4& inMatrix);
 
 	// Public Methods
 	void SetPosition(const Vector3& inPosition) { position = inPosition; }
@@ -47,7 +47,7 @@ struct Transform
 	void AddPitchRotation(float inPitchDegree);
 	void AddRollRotation(float inRollDegree);
 
-	Transform Inverse() const;
+	TransformMath Inverse() const;
 
 	// Operators
 
