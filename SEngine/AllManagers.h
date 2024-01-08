@@ -1,5 +1,4 @@
 #pragma once
-#include "IManager.h"
 #include "PathManager.h"
 #include "ResourceManager.h"
 #include "SoundManager.h"
@@ -12,19 +11,19 @@
 
 /// <summary>
 /// AllManagers에서 Get_Manager()로 전체 매니저를 가져올 수 있다 
+/// s
 /// 240102 이서영
 /// </summary>
 
-class AllManagers : public IManager
+class AllManagers
 {
 public:
 	AllManagers() = default;
 	~AllManagers() {};
 
-	void Initialize() override;
 	void Initialize(PathManager* pathManager, ResourceManager* resourceManager, SoundManager* soundManager, TimeManager* timeManager, InputManager* inputManager, SceneManager* sceneManager, CameraManager* cameraManager, CollisionManager* collisionManager, UIManager* UIManager);
-	void Finalize() override;
-	
+	void Finalize();
+
 	const PathManager* GetPathManager() const { return m_pathManager; }
 	const ResourceManager* GetResourceManager() const { return m_resourceManager; }
 	const SoundManager* GetSoundManager() const { return m_soundManager; }

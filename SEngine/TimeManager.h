@@ -2,21 +2,19 @@
 
 #include <Windows.h>
 
-#include "IManager.h"
-
 /// <summary>
 /// CalculateDeltaTime(_deltaTime)에서 쓸 deltaTime 값을 계산해주는 클래스
 /// 231231 이서영
 /// </summary>
-class TimeManager : public IManager
+class TimeManager
 {
 public:
 	TimeManager();
 	~TimeManager();
 
 public:
-	void Initialize() override;
-	void Finalize() override;
+	void Initialize();
+	void Finalize();
 
 	void ProcessDeltaTime();
 

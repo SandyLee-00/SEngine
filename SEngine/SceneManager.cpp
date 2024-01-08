@@ -1,11 +1,6 @@
 #include "SceneManager.h"
 #include "Scene.h"
 
-void SceneManager::Initialize()
-{
-
-}
-
 void SceneManager::Initialize(std::unordered_map<std::string, class Scene*> scenes, class Scene* currentScene)
 {
 	m_scenes = scenes;

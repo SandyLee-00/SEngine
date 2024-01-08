@@ -1,19 +1,18 @@
 #pragma once
-#include "IManager.h"
 
 /// <summary>
 /// 
 /// 240102 ¿Ãº≠øµ
 /// </summary>
 
-class UIManager : public IManager
+class UIManager
 {
 public:
 	UIManager() {};
 	~UIManager() {};
 
-	void Initialize() override;
-	void Finalize() override;
+	void Initialize();
+	void Finalize();
 
 	void ProcessUIEvent();
 };

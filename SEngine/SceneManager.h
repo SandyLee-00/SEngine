@@ -1,7 +1,6 @@
 #pragma once
 #include <unordered_map>
 #include <string>
-#include "IManager.h"
 
 /// <summary>
 /// 현재 Scene을 갖고 있어서 Scene을 전환할 수 있도록 한다
@@ -13,16 +12,15 @@
 /// 240102 이서영
 /// </summary>
 
-class SceneManager : public IManager
+class SceneManager
 {
 public:
 	SceneManager() = default;
 	~SceneManager() {};
 
 public:
-	void Initialize() override;
 	void Initialize(std::unordered_map<std::string, class Scene*> scenes, class Scene* currentScene);
-	void Finalize() override;
+	void Finalize();
 
 	void FixedUpdate(float PHYSICS_DELTATIME);
 	void Update(float deltaTime);

@@ -1,10 +1,5 @@
 #include "AllManagers.h"
 
-void AllManagers::Initialize()
-{
-
-}
-
 void AllManagers::Initialize(PathManager* pathManager, ResourceManager* resourceManager, SoundManager* soundManager, TimeManager* timeManager, InputManager* inputManager, SceneManager* sceneManager, CameraManager* cameraManager, CollisionManager* collisionManager, UIManager* UIManager)
 {
 	m_pathManager = pathManager;

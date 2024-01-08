@@ -1,19 +1,18 @@
 #pragma once
-#include "IManager.h"
 
 /// <summary>
 /// 
 /// 240102 ¿Ãº≠øµ
 /// </summary>
 
-class CameraManager : public IManager
+class CameraManager
 {
 public:
 	CameraManager() {};
 	~CameraManager() {};
 
-	void Initialize() override;
-	void Finalize() override;
+	void Initialize();
+	void Finalize();
 
 	void ProcessCamera();
 };

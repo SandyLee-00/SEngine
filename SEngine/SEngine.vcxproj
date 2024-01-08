@@ -137,7 +137,6 @@
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameProcess.h" />
-    <ClInclude Include="IManager.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="MathUtill.h" />
     <ClInclude Include="Matrix3x3.h" />
@@ -176,7 +175,6 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
-    <ClCompile Include="IManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="Matrix4x4.cpp" />

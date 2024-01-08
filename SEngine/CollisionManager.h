@@ -1,11 +1,9 @@
 #pragma once
-#include "IManager.h"
 
 /// <summary>
 /// 
 /// 240102 ¿Ãº≠øµ
 /// </summary>
-
 class CollisionManager
 {
 public:
