@@ -1,6 +1,9 @@
 #include "GameObject.h"
 
+#include <cassert>
+
 #include "AllManagers.h"
+#include "Transform.h"
 
 GameObject::GameObject()
 {
@@ -76,5 +79,60 @@ const CollisionManager* GameObject::GetCollisionManager() const
 const UIManager* GameObject::GetUIManager() const
 {
 	return m_allManagers->GetUIManager();
+}
+
+GameObject* GameObject::GetParentGameObject()
+{
+	Transform* thisTransform = GetComponent<Transform>();
+	if (thisTransform == nullptr)
+	{
+		assert(thisTransform && "GameObject* GameObject::GetParent() const / if(thisTransform == nullptr)");
+		return nullptr;
+	}
+	return thisTransform->GetParentGameObject();
+
+}
+
+GameObject* GameObject::GetChildGameObject(int index)
+{
+	Transform* thisTransform = GetComponent<Transform>();
+	if (thisTransform == nullptr)
+	{
+		assert(thisTransform && "GameObject* GameObject::GetChildGameObject(int index) const / if(thisTransform == nullptr)");
+		return nullptr;
+	}
+	return thisTransform->GetChildGameObject(index);
+}
+
+std::vector<GameObject*>& GameObject::GetChildrenGameObjects()
+{
+	Transform* thisTransform = GetComponent<Transform>();
+if (thisTransform == nullptr)
+	{
+		assert(thisTransform && "std::vector<GameObject*>& GameObject::GetChildrenGameObjects() const / if(thisTransform == nullptr)");
+		return thisTransform->GetChildrenGameObjects();
+	}
+}
+
+void GameObject::SetParentGameObject(GameObject* parent)
+{
+	Transform* thisTransform = GetComponent<Transform>();
+	if (thisTransform == nullptr)
+	{
+		assert(thisTransform && "void GameObject::SetParentGameObject(GameObject* parent) / if(thisTransform == nullptr)");
+		return;
+	}
+	thisTransform->SetParentGameObject(parent);
+}
+
+void GameObject::SetChildGameObject(GameObject* child)
+{
+	Transform* thisTransform = GetComponent<Transform>();
+	if (thisTransform == nullptr)
+	{
+		assert(thisTransform && "void GameObject::SetChildGameObject(GameObject* child) / if(thisTransform == nullptr)");
+		return;
+	}
+	thisTransform->SetChildGameObject(child);
 }
 

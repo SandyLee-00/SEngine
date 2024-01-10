@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "Vector3.h"
 #include "Quaternion.h"
 #include "Rotator.h"
@@ -10,6 +12,7 @@
 
 /// <summary>
 /// 물체 크기/위치/회전을 담당하는 Component
+/// + Parent - Child 관계를 통해 상대적인 Transform을 관리
 /// 
 /// 240108 이서영
 /// </summary>
@@ -44,6 +47,15 @@ public:
 
 	Transform Inverse() const;
 
+public:
+	// Parent - Child 관계
+	GameObject* GetParentGameObject() { return m_parent; }
+	GameObject* GetChildGameObject(int index);
+	std::vector<GameObject*>& GetChildrenGameObjects() { return m_children; }
+
+	void SetParentGameObject(GameObject* parent);
+	void SetChildGameObject(GameObject* child);
+
 	// Operators
 
 private:
@@ -51,5 +63,9 @@ private:
 	Vector3 position;
 	Quaternion rotation;
 	Vector3 scale;
+	
+	GameObject* m_parent;
+	std::vector<GameObject*> m_children;
+
 };
 

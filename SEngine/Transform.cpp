@@ -1,6 +1,7 @@
 #include "Transform.h"
 
 #include "MathUtill.h"
+#include "GameObject.h"
 
 Transform::Transform(const Matrix4x4& inMatrix)
 {
@@ -74,4 +75,54 @@ Transform Transform::Inverse() const
 	result.position = result.scale * (result.rotation * -position);
 
 	return result;
+}
+
+/// <summary>
+/// TODO: index 말고 다른 방법으로 찾기
+/// </summary>
+/// <param name="index"></param>
+/// <returns></returns>
+GameObject* Transform::GetChildGameObject(int index)
+{
+	if (index < 0 || index >= m_children.size())
+	{
+		return nullptr;
+	}
+	return m_children[index];
+}
+
+void Transform::SetParentGameObject(GameObject* parent)
+{
+	// parent null로 설정하기
+	if (parent == nullptr)
+	{
+		m_parent = nullptr;
+		return;
+	}
+
+	// 기존 m_parent와 동일한 parent로 설정할 때
+	if (m_parent != nullptr && m_parent == parent)
+	{
+		return;
+	}
+
+	if (m_parent != nullptr)
+	{
+		// 자식 리스트에 parent가 있는지 확인
+		for (auto child : m_children)
+		{
+			if (child == parent)
+			{
+				return;
+			}
+		}
+
+		// m_parent->RemoveChildGameObject(this);
+		m_parent = parent;
+	}
+}
+
+void Transform::SetChildGameObject(GameObject* child)
+{
+
 }

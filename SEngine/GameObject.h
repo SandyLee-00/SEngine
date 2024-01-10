@@ -1,12 +1,16 @@
 #pragma once
 
 #include <map>
+#include <vector>
 
 #include "Defines.h"
 
 /// <summary>
 /// Scene에서 Update 하는 GameObject
 /// IComponent를 상속한 Component를 붙혀 사용한다 
+/// + Parent-Child 관계를 Transform에서 관리 -> 꼭 생성할 때 Transform 붙어있어야 한다
+/// + Object의 ID가 필요하다 Children 중에서 찾을 때 사용
+/// 
 /// 231231 이서영
 /// </summary>
 class GameObject
@@ -16,12 +20,14 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
+	// LifeCycle
 	void Start();
 	void FixedUpdate(float FIXED_DELTATIME);
 	void Update(float deltaTime);
 	void Render(class Renderer* renderer);
 
 public:
+	// Componet 
 	ObjectOrder GetObjectType() const { return m_objectType; }
 
 	template<typename T>
@@ -31,6 +37,7 @@ public:
 	T* CreateComponent();
 
 public:
+	// Manager
 	const class AllManagers* GetAllManagers() const { return m_allManagers; }
 	const class PathManager* GetPathManager() const;
 	const class ResourceManager* GetResourceManager() const;
@@ -42,6 +49,14 @@ public:
 	const class CollisionManager* GetCollisionManager() const;
 	const class UIManager* GetUIManager() const;
 
+public:
+	// Parent-Child
+	GameObject* GetParentGameObject();
+	GameObject* GetChildGameObject(int index);
+	std::vector<GameObject*>& GetChildrenGameObjects();
+
+	void SetParentGameObject(GameObject* parent);
+	void SetChildGameObject(GameObject* child);
 
 private:
 	ObjectOrder m_objectType;
@@ -50,9 +65,9 @@ private:
 	const class AllManagers* m_allManagers;
 };
 
-template<typename T>
+template <typename T>
 T* GameObject::GetComponent()
-{
+{ 
 	for (auto& iter : m_components)
 	{
 		T* component = dynamic_cast<T*>(iter.second);
@@ -65,7 +80,7 @@ T* GameObject::GetComponent()
 	return nullptr;
 }
 
-template<typename T>
+template <typename T>
 T* GameObject::CreateComponent()
 {
 	// 이미 생성된 컴포넌트는 생성하지 않음
