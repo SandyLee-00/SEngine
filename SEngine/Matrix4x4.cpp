@@ -1,6 +1,6 @@
-#include <cassert>
-
 #include "Matrix4x4.h"
+
+#include <cassert>
 
 
 const Matrix4x4 Matrix4x4::Identity(

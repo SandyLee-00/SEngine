@@ -1,5 +1,5 @@
-#include <cassert>
 #include "Matrix3x3.h"
+#include <cassert>
 #include "Vector3.h"
 
 const Matrix3x3 Matrix3x3::Identity(
