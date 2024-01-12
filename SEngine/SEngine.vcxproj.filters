@@ -30,7 +30,7 @@
     <ClInclude Include="EntryPoint.h">
       <Filter>3_1_EntryPoint</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
+    <ClInclude Include="Entity.h">
       <Filter>3_Engine</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
@@ -163,7 +163,7 @@
     <ClCompile Include="GameProcess.cpp">
       <Filter>3_1_EntryPoint</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
+    <ClCompile Include="Entity.cpp">
       <Filter>3_Engine</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">

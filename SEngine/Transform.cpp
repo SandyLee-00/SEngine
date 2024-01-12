@@ -2,7 +2,7 @@
 
 #include <cassert>
 #include "MathUtill.h"
-#include "GameObject.h"
+#include "Entity.h"
 
 Transform::Transform(const Matrix4x4& inMatrix)
 {

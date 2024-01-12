@@ -1,6 +1,6 @@
 #include "Component.h"
 
-#include "GameObject.h"
+#include "Entity.h"
 #include "AllManagers.h"
 
 Component::Component()

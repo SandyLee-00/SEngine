@@ -29,7 +29,7 @@ public:
 
 public:
 	// Scene의 공통 기능
-	void AddGameObject(class GameObject* _gameObject);
+	void AddGameObject(class Entity* _gameObject);
 
 private:
 	// 씬 이름
@@ -39,7 +39,7 @@ private:
 	class Renderer* m_renderer;
 
 	// ObjectType에 따른 GameObject들
-	std::vector<class GameObject*> m_gameObjects[static_cast<int>(Layers::End)];
+	std::vector<class Entity*> m_gameObjects[static_cast<int>(Layers::End)];
 
 };
 

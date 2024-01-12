@@ -20,8 +20,9 @@ public:
 
 public:
 	ComponentOrder GetCallOrder() const { return m_componentType; }
+	Entity* GetGameObject() const { return m_gameObject; }
 
-	void SetGameObject(class GameObject* gameObject) { m_gameObject = gameObject; }
+	void SetGameObject(class Entity* gameObject) { m_gameObject = gameObject; }
 
 public:
 	const class AllManagers* GetAllManagers() const;
@@ -37,7 +38,7 @@ public:
 
 private:
 	const ComponentOrder m_componentType;
-	class GameObject* m_gameObject;
+	class Entity* m_gameObject;
 
 };
 

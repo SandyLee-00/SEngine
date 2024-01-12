@@ -36,6 +36,8 @@ enum class ComponentOrder
 /// <summary>
 /// CollisionManager에서 충돌을 판단할 때 사용하는 태그
 /// 
+/// https://docs.unity3d.com/Manual/class-TagManager.html
+/// https://docs.unity3d.com/Manual/Tags.html
 /// 240112 이서영
 /// </summary>
 enum class Tags
@@ -46,4 +48,18 @@ enum class Tags
 	EnemyBullet,
 	PlayerBullet,
 	End = 32
+};
+
+/// <summary>
+/// Collision 정보는 Collider.OnCollisionEnter, Collider.OnCollisionStay 및 Collider.OnCollisionExit 이벤트에 전달됩니다.
+/// 
+/// https://docs.unity3d.com/ScriptReference/Collision.html
+/// https://docs.unity3d.com/ScriptReference/ContactPoint.html
+/// 240112 이서영
+/// </summary>
+struct Collision
+{
+	class Entity* otherGameObject;
+	class BoxCollider* otherCollider;
+	class BoxCollider* thisCollider;
 };

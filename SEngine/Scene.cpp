@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include "GameObject.h"
+#include "Entity.h"
 #include "Defines.h"
 #include "Renderer.h"
 
@@ -52,7 +52,7 @@ void Scene::Render(class Renderer* renderer)
 	}
 }
 
-void Scene::AddGameObject(GameObject* _gameObject)
+void Scene::AddGameObject(Entity* _gameObject)
 {
 	m_gameObjects[static_cast<int>(_gameObject->GetObjectLayer())].push_back(_gameObject);
 

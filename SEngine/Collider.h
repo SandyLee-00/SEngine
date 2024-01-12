@@ -22,6 +22,6 @@ private:
 	// Properties
 	bool isTrigger;
 
-	class GameObject* gameObject;
+	class Entity* gameObject;
 };
 

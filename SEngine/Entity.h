@@ -6,7 +6,7 @@
 #include "Defines.h"
 
 /// <summary>
-/// Scene에서 Update 하는 GameObject
+/// Scene에서 Update 하는 Entity
 /// IComponent를 상속한 Component를 붙혀 사용한다 
 /// + Parent-Child 관계를 Transform에서 관리 -> 꼭 생성할 때 Transform 붙어있어야 한다
 /// 
@@ -14,12 +14,12 @@
 /// 
 /// 231231 이서영
 /// </summary>
-class GameObject
+class Entity
 {
 
 public:
-	GameObject();
-	virtual ~GameObject();
+	Entity();
+	virtual ~Entity();
 
 	// LifeCycle
 	void Start();
@@ -65,7 +65,7 @@ private:
 };
 
 template <typename T>
-T* GameObject::GetComponent()
+T* Entity::GetComponent()
 { 
 	for (auto& iter : m_components)
 	{
@@ -80,7 +80,7 @@ T* GameObject::GetComponent()
 }
 
 template <typename T>
-T* GameObject::CreateComponent()
+T* Entity::CreateComponent()
 {
 	// 이미 생성된 컴포넌트는 생성하지 않음
 	if (GetComponent<T>() != nullptr)
@@ -98,7 +98,7 @@ T* GameObject::CreateComponent()
 		return nullptr;
 	}
 
-	// component와 GameObject 연결
+	// component와 Entity 연결
 	component->SetGameObject(this);
 
 	// component를 map에 추가

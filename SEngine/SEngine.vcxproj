@@ -138,7 +138,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Frustum.h" />
     <ClInclude Include="GameEngine.h" />
-    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="MathUtill.h" />
@@ -180,7 +180,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="GameEngine.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="EntryPoint.cpp" />
     <ClCompile Include="InputManager.cpp" />

@@ -66,7 +66,7 @@ public:
 
 private:
 	// Properties
-	GameObject* m_gameObject;
+	Entity* m_gameObject;
 
 	Vector3 m_position;
 	Quaternion m_rotation;
