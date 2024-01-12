@@ -10,6 +10,7 @@
 /// IComponent를 상속한 Component를 붙혀 사용한다 
 /// + Parent-Child 관계를 Transform에서 관리 -> 꼭 생성할 때 Transform 붙어있어야 한다
 /// 
+/// https://docs.unity3d.com/Manual/class-TagManager.html
 /// 
 /// 231231 이서영
 /// </summary>
@@ -49,11 +50,18 @@ public:
 	const class CollisionManager* GetCollisionManager() const;
 	const class UIManager* GetUIManager() const;
 
+public:
+	// Tag
+	Tags GetTag() const { return m_tag; }
+	void SetTag(Tags tag) { m_tag = tag; }
+
 private:
 	Layers m_objectLayer;
 	std::map<ComponentOrder, class Component*> m_components;
 
 	const class AllManagers* m_allManagers;
+
+	Tags m_tag;
 };
 
 template <typename T>
