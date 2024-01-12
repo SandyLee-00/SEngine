@@ -14,6 +14,8 @@
 /// 물체 크기/위치/회전을 담당하는 Component
 /// + Parent - Child 관계를 통해 상대적인 Transform을 관리
 /// 
+/// https://docs.unity3d.com/ScriptReference/Transform.html
+/// 
 /// 240108 이서영
 /// </summary>
 class Transform : public Component
@@ -44,28 +46,33 @@ public:
 	void AddYawRotation(float inYawDegree);
 	void AddPitchRotation(float inPitchDegree);
 	void AddRollRotation(float inRollDegree);
+	void Rotate(float inYawDegree, float inPitchDegree, float inRollDegree);
 
 	Transform Inverse() const;
 
 public:
 	// Parent - Child 관계
-	GameObject* GetParentGameObject() { return m_parent; }
-	GameObject* GetChildGameObject(int index);
-	std::vector<GameObject*>& GetChildrenGameObjects() { return m_children; }
+	Transform* GetChild(int index) const;
+	std::vector<Transform*>& GetChildren();
+	Transform* GetParent() const;
 
-	void SetParentGameObject(GameObject* parent);
-	void SetChildGameObject(GameObject* child);
+	bool IsChildOf(const Transform* inParent) const;
 
+	void SetParent(Transform* inParent);
+	void SetChild(Transform* inChild);
+
+public:
 	// Operators
 
 private:
 	// Properties
+	GameObject* gameObject;
+
 	Vector3 position;
 	Quaternion rotation;
 	Vector3 scale;
-	
-	GameObject* m_parent;
-	std::vector<GameObject*> m_children;
 
+	Transform* parent;
+	std::vector<Transform*> children;
 };
 

@@ -1,5 +1,6 @@
 #include "Transform.h"
 
+#include <cassert>
 #include "MathUtill.h"
 #include "GameObject.h"
 
@@ -62,6 +63,13 @@ void Transform::AddRollRotation(float inRollDegree)
 	rotation = Quaternion(rollRotator);
 }
 
+void Transform::Rotate(float inYawDegree, float inPitchDegree, float inRollDegree)
+{
+	AddYawRotation(inYawDegree);
+	AddPitchRotation(inPitchDegree);
+	AddRollRotation(inRollDegree);
+}
+
 Transform Transform::Inverse() const
 {
 	Vector3 reciprocalScale = Vector3::Zero;
@@ -77,52 +85,82 @@ Transform Transform::Inverse() const
 	return result;
 }
 
-/// <summary>
-/// TODO: index 말고 다른 방법으로 찾기
-/// </summary>
-/// <param name="index"></param>
-/// <returns></returns>
-GameObject* Transform::GetChildGameObject(int index)
+Transform* Transform::GetChild(int index) const
 {
-	if (index < 0 || index >= m_children.size())
+	if (index < 0 || index >= children.size())
 	{
+		assert(index >= 0 && index < children.size() && "Transform* Transform::GetChild(int index) const / if(index < 0 || index >= children.size())");
 		return nullptr;
 	}
-	return m_children[index];
+	return children[index];
 }
 
-void Transform::SetParentGameObject(GameObject* parent)
+std::vector<Transform*>& Transform::GetChildren()
 {
-	// parent null로 설정하기
-	if (parent == nullptr)
+	return children;
+}
+
+Transform* Transform::GetParent() const
+{
+	return parent;
+}
+
+void Transform::SetParent(Transform* inParent)
+{
+	// # 부모가 없을 경우 : 부모를 추가하고 부모의 자식으로 추가
+	if (this->parent == nullptr)
 	{
-		m_parent = nullptr;
-		return;
+		this->parent = inParent;
+		inParent->children.push_back(this);
 	}
 
-	// 기존 m_parent와 동일한 parent로 설정할 때
-	if (m_parent != nullptr && m_parent == parent)
+	// # 부모가 있을 경우 : 기존 부모의 자식 목록에서 제거하고 부모를 추가하고 부모의 자식으로 추가
+	else if (this->parent != nullptr)
 	{
-		return;
-	}
-
-	if (m_parent != nullptr)
-	{
-		// 자식 리스트에 parent가 있는지 확인
-		for (auto child : m_children)
+		// 기존 부모의 자식 목록에서 제거
+		for (auto iter = this->parent->children.begin(); iter != this->parent->children.end(); ++iter)
 		{
-			if (child == parent)
+			if (*iter == this)
 			{
-				return;
+				this->parent->children.erase(iter);
+				break;
 			}
 		}
 
-		// m_parent->RemoveChildGameObject(this);
-		m_parent = parent;
+		// 부모를 추가하고 부모의 자식으로 추가
+		this->parent = inParent;
+		inParent->children.push_back(this);
 	}
 }
 
-void Transform::SetChildGameObject(GameObject* child)
+void Transform::SetChild(Transform* inChild)
 {
-
+	children.push_back(inChild);
 }
+
+bool Transform::IsChildOf(const Transform* inParent) const
+{
+	// 부모를 찾아서 부모가 있는지 확인
+	Transform* thisTransform = GetParent();
+
+	// while로 위로 올라가면서 부모가 있는지 확인
+	while (thisTransform != nullptr)
+	{
+		// # 위에 부모가 없을 경우
+		if (thisTransform->GetParent() == nullptr)
+		{
+			return false;
+		}
+
+		// # 위에 부모가 inParent와 같을 경우
+		else if (thisTransform == inParent)
+		{
+			return true;
+		}
+
+		thisTransform = thisTransform->parent;
+	}
+
+	return false;
+}
+

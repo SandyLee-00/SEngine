@@ -9,7 +9,7 @@
 /// Scene에서 Update 하는 GameObject
 /// IComponent를 상속한 Component를 붙혀 사용한다 
 /// + Parent-Child 관계를 Transform에서 관리 -> 꼭 생성할 때 Transform 붙어있어야 한다
-/// + Object의 ID가 필요하다 Children 중에서 찾을 때 사용
+/// 
 /// 
 /// 231231 이서영
 /// </summary>
@@ -48,15 +48,6 @@ public:
 	const class CameraManager* GetCameraManager() const;
 	const class CollisionManager* GetCollisionManager() const;
 	const class UIManager* GetUIManager() const;
-
-public:
-	// Parent-Child
-	GameObject* GetParentGameObject();
-	GameObject* GetChildGameObject(int index);
-	std::vector<GameObject*>& GetChildrenGameObjects();
-
-	void SetParentGameObject(GameObject* parent);
-	void SetChildGameObject(GameObject* child);
 
 private:
 	ObjectOrder m_objectType;
