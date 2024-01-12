@@ -13,10 +13,12 @@ public:
 	Component();
 	virtual ~Component() {};
 
+	// Process
 	virtual void Start() {};
 	virtual void FixedUpdate(float FIXED_DELTATIME) {};
 	virtual void Update(float deltaTime) {};
 	virtual void Render(class Renderer* renderer) {};
+	virtual void DebugRender(class Renderer* renderer) {};
 
 public:
 	ComponentOrder GetCallOrder() const { return m_componentType; }

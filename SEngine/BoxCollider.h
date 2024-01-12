@@ -11,6 +11,7 @@
 /// https://docs.unity3d.com/ScriptReference/BoxCollider.html
 /// https://docs.unity3d.com/ScriptReference/Collision.html
 /// https://docs.unity3d.com/ScriptReference/ContactPoint.html
+/// https://docs.unity3d.com/550/Documentation/Manual/LayerBasedCollision.html
 /// 240112 ¿Ãº≠øµ
 /// </summary>
 class BoxCollider : public Component

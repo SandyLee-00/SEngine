@@ -52,8 +52,8 @@ public:
 
 public:
 	// Tag
-	Tags GetTag() const { return m_tag; }
-	void SetTag(Tags tag) { m_tag = tag; }
+// 	Tags GetTag() const { return m_tag; }
+// 	void SetTag(Tags tag) { m_tag = tag; }
 
 private:
 	Layers m_objectLayer;
@@ -61,7 +61,7 @@ private:
 
 	const class AllManagers* m_allManagers;
 
-	Tags m_tag;
+/*	Tags m_tag;*/
 };
 
 template <typename T>

@@ -34,21 +34,23 @@ enum class ComponentOrder
 };
 
 /// <summary>
-/// CollisionManager에서 충돌을 판단할 때 사용하는 태그
+/// Entity에 붙힌다
+/// void OnCollisionEnter(Collision collision) 에서 if (collision.gameObject.tag == "MyGameObjectTag") 처럼 사용한다 
+/// + 일단 이름으로 쓰고 나중에 추가하기
 /// 
 /// https://docs.unity3d.com/Manual/class-TagManager.html
 /// https://docs.unity3d.com/Manual/Tags.html
 /// 240112 이서영
 /// </summary>
-enum class Tags
-{
-	None,
-	Enemy,
-	Player,
-	EnemyBullet,
-	PlayerBullet,
-	End = 32
-};
+// enum class Tags
+// {
+// 	None,
+// 	Enemy,
+// 	Player,
+// 	EnemyBullet,
+// 	PlayerBullet,
+// 	End = 32
+// };
 
 /// <summary>
 /// Collision 정보는 Collider.OnCollisionEnter, Collider.OnCollisionStay 및 Collider.OnCollisionExit 이벤트에 전달됩니다.
@@ -59,7 +61,7 @@ enum class Tags
 /// </summary>
 struct Collision
 {
-	class Entity* otherGameObject;
+	class Entity* otherEntity;
 	class BoxCollider* otherCollider;
 	class BoxCollider* thisCollider;
 };
