@@ -146,6 +146,7 @@
     <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="PathManager.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Rectangle.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="Matrix3x3.cpp" />
     <ClCompile Include="Matrix4x4.cpp" />
     <ClCompile Include="PathManager.cpp" />
+    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Rectangle.cpp" />

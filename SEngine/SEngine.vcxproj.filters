@@ -147,6 +147,7 @@
     <ClInclude Include="Transform.h">
       <Filter>3_3_Components</Filter>
     </ClInclude>
+    <ClInclude Include="Physics.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -265,6 +266,7 @@
     <ClCompile Include="Transform.cpp">
       <Filter>3_3_Components</Filter>
     </ClCompile>
+    <ClCompile Include="Physics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">

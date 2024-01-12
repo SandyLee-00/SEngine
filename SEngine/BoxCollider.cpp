@@ -4,7 +4,7 @@
 /// Collider/rigidbody가 다른 rigidbody/Collider와 접촉하기 시작하면 OnCollisionEnter가 호출됩니다.
 /// </summary>
 /// <param name="otherCollider"></param>
-void BoxCollider::OnCollisionEnter(const Collision& otherCollider)
+void BoxCollider::OnCollisionEnter(const Collision& collision)
 {
 
 }
@@ -13,7 +13,7 @@ void BoxCollider::OnCollisionEnter(const Collision& otherCollider)
 /// OnCollisionStay는 다른 Collider 또는 rigidbody에 닿는 모든 Collider 또는 rigidbody에 대해 프레임당 한 번 호출됩니다.
 /// </summary>
 /// <param name="otherCollider"></param>
-void BoxCollider::OnCollisionStay(const Collision& otherCollider)
+void BoxCollider::OnCollisionStay(const Collision& collision)
 {
 
 }
@@ -22,7 +22,7 @@ void BoxCollider::OnCollisionStay(const Collision& otherCollider)
 /// Collider/rigidbody가 다른 rigidbody/Collider와 접촉을 멈췄을 때 호출됩니다.
 /// </summary>
 /// <param name="otherCollider"></param>
-void BoxCollider::OnCollisionExit(const Collision& otherCollider)
+void BoxCollider::OnCollisionExit(const Collision& collision)
 {
 
 }
