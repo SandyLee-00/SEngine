@@ -23,26 +23,26 @@ class Transform : public Component
 public:
 	// Constructors
 	Transform() = default;
-	Transform(const Vector3 inPosition) : position(inPosition) {}
-	Transform(const Vector3& inPosition, const Quaternion& inRotation, const Vector3& inScale) : position(inPosition), rotation(inRotation), scale(inScale) {}
+	Transform(const Vector3 inPosition) : m_position(inPosition) {}
+	Transform(const Vector3& inPosition, const Quaternion& inRotation, const Vector3& inScale) : m_position(inPosition), m_rotation(inRotation), m_scale(inScale) {}
 	Transform(const Matrix4x4& inMatrix);
 
 	// Public Methods
-	void SetPosition(const Vector3& inPosition) { position = inPosition; }
-	void SetRotation(const Rotator& inRotator) { rotation = Quaternion(inRotator); }
-	void SetRotation(const Quaternion& inRotation) { rotation = inRotation; }
-	void SetScale(const Vector3& inScale) { scale = inScale; }
+	void SetPosition(const Vector3& inPosition) { m_position = inPosition; }
+	void SetRotation(const Rotator& inRotator) { m_rotation = Quaternion(inRotator); }
+	void SetRotation(const Quaternion& inRotation) { m_rotation = inRotation; }
+	void SetScale(const Vector3& inScale) { m_scale = inScale; }
 
-	Vector3 GetPosition() const { return position; }
-	Quaternion GetRotation() const { return rotation; }
-	Vector3 GetScale() const { return scale; }
+	Vector3 GetPosition() const { return m_position; }
+	Quaternion GetRotation() const { return m_rotation; }
+	Vector3 GetScale() const { return m_scale; }
 	Matrix4x4 GetMatrix() const;
 
-	Vector3 GetXAxis() const { return rotation * Vector3::UnitX; }
-	Vector3 GetYAxis() const { return rotation * Vector3::UnitY; }
-	Vector3 GetZAxis() const { return rotation * Vector3::UnitZ; }
+	Vector3 GetXAxis() const { return m_rotation * Vector3::UnitX; }
+	Vector3 GetYAxis() const { return m_rotation * Vector3::UnitY; }
+	Vector3 GetZAxis() const { return m_rotation * Vector3::UnitZ; }
 
-	void AddPosition(const Vector3& inPosition) { position += inPosition; }
+	void AddPosition(const Vector3& inPosition) { m_position += inPosition; }
 	void AddYawRotation(float inYawDegree);
 	void AddPitchRotation(float inPitchDegree);
 	void AddRollRotation(float inRollDegree);
@@ -66,13 +66,13 @@ public:
 
 private:
 	// Properties
-	GameObject* gameObject;
+	GameObject* m_gameObject;
 
-	Vector3 position;
-	Quaternion rotation;
-	Vector3 scale;
+	Vector3 m_position;
+	Quaternion m_rotation;
+	Vector3 m_scale;
 
-	Transform* parent;
-	std::vector<Transform*> children;
+	Transform* m_parent;
+	std::vector<Transform*> m_children;
 };
 

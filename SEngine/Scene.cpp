@@ -10,7 +10,7 @@ Scene::~Scene()
 
 void Scene::Start()
 {
-	for (int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
+	for (int i = 0; i < static_cast<int>(Layers::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -21,7 +21,7 @@ void Scene::Start()
 
 void Scene::FixedUpdate(float FIXED_DELTATIME)
 {
-	for(int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
+	for(int i = 0; i < static_cast<int>(Layers::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -32,7 +32,7 @@ void Scene::FixedUpdate(float FIXED_DELTATIME)
 
 void Scene::Update(float deltaTime)
 {
-	for (int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
+	for (int i = 0; i < static_cast<int>(Layers::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -43,7 +43,7 @@ void Scene::Update(float deltaTime)
 
 void Scene::Render(class Renderer* renderer)
 {
-	for (int i = 0; i < static_cast<int>(ObjectOrder::End); ++i)
+	for (int i = 0; i < static_cast<int>(Layers::End); ++i)
 	{
 		for (auto& gameObject : m_gameObjects[i])
 		{
@@ -54,7 +54,7 @@ void Scene::Render(class Renderer* renderer)
 
 void Scene::AddGameObject(GameObject* _gameObject)
 {
-	m_gameObjects[static_cast<int>(_gameObject->GetObjectType())].push_back(_gameObject);
+	m_gameObjects[static_cast<int>(_gameObject->GetObjectLayer())].push_back(_gameObject);
 
 	// TODO: Collider 있으면 충돌처리 추가
 }

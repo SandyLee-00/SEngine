@@ -8,17 +8,17 @@ Transform::Transform(const Matrix4x4& inMatrix)
 {
 	// 스케일 회전 행렬만 분리
 	Matrix3x3 rotScaleMatrix = inMatrix.ToMatrix3x3();
-	position = Vector3(inMatrix[3].x, inMatrix[3].y, inMatrix[3].z);
+	m_position = Vector3(inMatrix[3].x, inMatrix[3].y, inMatrix[3].z);
 
 	// 크기 행렬부터 구한다. 
-	scale = Vector3::Zero;
+	m_scale = Vector3::Zero;
 	const float squareSumX = rotScaleMatrix[0].SizeSquared();
 	const float squareSumY = rotScaleMatrix[1].SizeSquared();
 	const float squareSumZ = rotScaleMatrix[2].SizeSquared();
 
-	if (squareSumX > Math::SMALL_NUMBER) { scale.x = sqrtf(squareSumX); }
-	if (squareSumY > Math::SMALL_NUMBER) { scale.y = sqrtf(squareSumY); }
-	if (squareSumZ > Math::SMALL_NUMBER) { scale.z = sqrtf(squareSumZ); }
+	if (squareSumX > Math::SMALL_NUMBER) { m_scale.x = sqrtf(squareSumX); }
+	if (squareSumY > Math::SMALL_NUMBER) { m_scale.y = sqrtf(squareSumY); }
+	if (squareSumZ > Math::SMALL_NUMBER) { m_scale.z = sqrtf(squareSumZ); }
 
 	// 크기 요소를 나눠 직교 정방 행렬을 구한다.
 	rotScaleMatrix[0] /= squareSumX;
@@ -26,41 +26,41 @@ Transform::Transform(const Matrix4x4& inMatrix)
 	rotScaleMatrix[2] /= squareSumZ;
 
 	// 사원수로 변환한다.
-	rotation = Quaternion(rotScaleMatrix);
+	m_rotation = Quaternion(rotScaleMatrix);
 }
 
 Matrix4x4 Transform::GetMatrix() const
 {
 	return Matrix4x4(
-		Vector4(GetXAxis() * scale.x, false),
-		Vector4(GetYAxis() * scale.y, false),
-		Vector4(GetZAxis() * scale.z, false),
-		Vector4(position, true)
+		Vector4(GetXAxis() * m_scale.x, false),
+		Vector4(GetYAxis() * m_scale.y, false),
+		Vector4(GetZAxis() * m_scale.z, false),
+		Vector4(m_position, true)
 	);
 }
 
 void Transform::AddYawRotation(float inYawDegree)
 {
-	Rotator yawRotator = rotation.ToRotator();
+	Rotator yawRotator = m_rotation.ToRotator();
 	yawRotator.yaw += inYawDegree;
 	yawRotator.Clamp();
-	rotation = Quaternion(yawRotator);
+	m_rotation = Quaternion(yawRotator);
 }
 
 void Transform::AddPitchRotation(float inPitchDegree)
 {
-	Rotator pitchRotator = rotation.ToRotator();
+	Rotator pitchRotator = m_rotation.ToRotator();
 	pitchRotator.pitch += inPitchDegree;
 	pitchRotator.Clamp();
-	rotation = Quaternion(pitchRotator);
+	m_rotation = Quaternion(pitchRotator);
 }
 
 void Transform::AddRollRotation(float inRollDegree)
 {
-	Rotator rollRotator = rotation.ToRotator();
+	Rotator rollRotator = m_rotation.ToRotator();
 	rollRotator.roll += inRollDegree;
 	rollRotator.Clamp();
-	rotation = Quaternion(rollRotator);
+	m_rotation = Quaternion(rollRotator);
 }
 
 void Transform::Rotate(float inYawDegree, float inPitchDegree, float inRollDegree)
@@ -73,69 +73,69 @@ void Transform::Rotate(float inYawDegree, float inPitchDegree, float inRollDegre
 Transform Transform::Inverse() const
 {
 	Vector3 reciprocalScale = Vector3::Zero;
-	if (!Math::EqualsInTolerance(scale.x, 0.f)) reciprocalScale.x = 1.f / scale.x;
-	if (!Math::EqualsInTolerance(scale.y, 0.f)) reciprocalScale.y = 1.f / scale.y;
-	if (!Math::EqualsInTolerance(scale.z, 0.f)) reciprocalScale.z = 1.f / scale.z;
+	if (!Math::EqualsInTolerance(m_scale.x, 0.f)) reciprocalScale.x = 1.f / m_scale.x;
+	if (!Math::EqualsInTolerance(m_scale.y, 0.f)) reciprocalScale.y = 1.f / m_scale.y;
+	if (!Math::EqualsInTolerance(m_scale.z, 0.f)) reciprocalScale.z = 1.f / m_scale.z;
 
 	Transform result;
-	result.scale = reciprocalScale;
-	result.rotation = rotation.Inverse();
-	result.position = result.scale * (result.rotation * -position);
+	result.m_scale = reciprocalScale;
+	result.m_rotation = m_rotation.Inverse();
+	result.m_position = result.m_scale * (result.m_rotation * -m_position);
 
 	return result;
 }
 
 Transform* Transform::GetChild(int index) const
 {
-	if (index < 0 || index >= children.size())
+	if (index < 0 || index >= m_children.size())
 	{
-		assert(index >= 0 && index < children.size() && "Transform* Transform::GetChild(int index) const / if(index < 0 || index >= children.size())");
+		assert(index >= 0 && index < m_children.size() && "Transform* Transform::GetChild(int index) const / if(index < 0 || index >= children.size())");
 		return nullptr;
 	}
-	return children[index];
+	return m_children[index];
 }
 
 std::vector<Transform*>& Transform::GetChildren()
 {
-	return children;
+	return m_children;
 }
 
 Transform* Transform::GetParent() const
 {
-	return parent;
+	return m_parent;
 }
 
 void Transform::SetParent(Transform* inParent)
 {
 	// # 부모가 없을 경우 : 부모를 추가하고 부모의 자식으로 추가
-	if (this->parent == nullptr)
+	if (this->m_parent == nullptr)
 	{
-		this->parent = inParent;
-		inParent->children.push_back(this);
+		this->m_parent = inParent;
+		inParent->m_children.push_back(this);
 	}
 
 	// # 부모가 있을 경우 : 기존 부모의 자식 목록에서 제거하고 부모를 추가하고 부모의 자식으로 추가
-	else if (this->parent != nullptr)
+	else if (this->m_parent != nullptr)
 	{
 		// 기존 부모의 자식 목록에서 제거
-		for (auto iter = this->parent->children.begin(); iter != this->parent->children.end(); ++iter)
+		for (auto iter = this->m_parent->m_children.begin(); iter != this->m_parent->m_children.end(); ++iter)
 		{
 			if (*iter == this)
 			{
-				this->parent->children.erase(iter);
+				this->m_parent->m_children.erase(iter);
 				break;
 			}
 		}
 
 		// 부모를 추가하고 부모의 자식으로 추가
-		this->parent = inParent;
-		inParent->children.push_back(this);
+		this->m_parent = inParent;
+		inParent->m_children.push_back(this);
 	}
 }
 
 void Transform::SetChild(Transform* inChild)
 {
-	children.push_back(inChild);
+	m_children.push_back(inChild);
 }
 
 bool Transform::IsChildOf(const Transform* inParent) const
@@ -158,7 +158,7 @@ bool Transform::IsChildOf(const Transform* inParent) const
 			return true;
 		}
 
-		thisTransform = thisTransform->parent;
+		thisTransform = thisTransform->m_parent;
 	}
 
 	return false;

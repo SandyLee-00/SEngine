@@ -39,7 +39,7 @@ private:
 	class Renderer* m_renderer;
 
 	// ObjectType에 따른 GameObject들
-	std::vector<class GameObject*> m_gameObjects[static_cast<int>(ObjectOrder::End)];
+	std::vector<class GameObject*> m_gameObjects[static_cast<int>(Layers::End)];
 
 };
 

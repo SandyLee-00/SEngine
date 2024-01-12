@@ -28,7 +28,7 @@ public:
 
 public:
 	// Componet 
-	ObjectOrder GetObjectType() const { return m_objectType; }
+	Layers GetObjectLayer() const { return m_objectLayer; }
 
 	template<typename T>
 	T* GetComponent();
@@ -50,7 +50,7 @@ public:
 	const class UIManager* GetUIManager() const;
 
 private:
-	ObjectOrder m_objectType;
+	Layers m_objectLayer;
 	std::map<ComponentOrder, class Component*> m_components;
 
 	const class AllManagers* m_allManagers;
