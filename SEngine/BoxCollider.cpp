@@ -33,7 +33,7 @@ void BoxCollider::OnCollisionExit(const Collision& collision)
 /// <param name="otherCollider"></param>
 void BoxCollider::OnTriggerEnter(const BoxCollider& otherCollider)
 {
-
+	
 }
 
 /// <summary>

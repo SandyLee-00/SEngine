@@ -148,6 +148,9 @@
       <Filter>3_3_Components</Filter>
     </ClInclude>
     <ClInclude Include="Physics.h" />
+    <ClInclude Include="RigidBody.h">
+      <Filter>3_3_Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="SEngine.ico">
@@ -267,6 +270,9 @@
       <Filter>3_3_Components</Filter>
     </ClCompile>
     <ClCompile Include="Physics.cpp" />
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>3_3_Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SEngine.rc">

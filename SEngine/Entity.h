@@ -99,7 +99,7 @@ T* Entity::CreateComponent()
 	}
 
 	// component와 Entity 연결
-	component->SetGameObject(this);
+	component->SetEntity(this);
 
 	// component를 map에 추가
 	m_components.insert(std::make_pair(component->GetCallOrder(), component));

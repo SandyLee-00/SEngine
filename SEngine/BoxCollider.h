@@ -44,5 +44,6 @@ private:
 
 	// Inherited Members Properties
 	bool isTrigger;
+	Vector3 offset;
 };
 
